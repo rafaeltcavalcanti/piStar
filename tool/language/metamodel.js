@@ -59,26 +59,46 @@ istar.metamodel = {
     //Further constraints can be defined in the constraints file
     /** @type {Object} */
     "nodes": {
+		
+		/**
         "Goal": {
             "canBeInnerElement": true,
             "canBeDependum": true,
             "canBeOnPaper": false
         },
-        "Quality": {
+		*/
+		"SoftGoal": {
             "canBeInnerElement": true,
             "canBeDependum": true,
             "canBeOnPaper": false
         },
+		
+		
+        "Operationalization": {
+            "canBeInnerElement": true,
+            "canBeDependum": true,
+            "canBeOnPaper": false
+        }
+		
+		
+		/** REMOVENDO OS BOTOES DO MENU !!!!!!!!!!!!!!
+		,
         "Resource": {
             "canBeInnerElement": true,
             "canBeDependum": true,
             "canBeOnPaper": false
-        },
+        }
+		
+		,
         "Task": {
             "canBeInnerElement": true,
             "canBeDependum": true,
             "canBeOnPaper": false
         }
+		*/
+		
+		
+		
     },
 
     //Add here the links of your language that directly relate a container with another container
@@ -106,14 +126,20 @@ istar.metamodel = {
     //Constraints for the validity of a Link type can be defined in the constraints file
     /** @type {Object} */
     "nodeLinks": {
-        "AndRefinementLink": { },
-        "OrRefinementLink": { },
-        "NeededByLink": {
+        //"DecompositionLink1": { },
+        "And": { },
+        "Or": {
             "tryReversedWhenAdding": true
         },
-        "QualificationLink": {
+		
+		
+		
+		"QualificationLink": {
             "tryReversedWhenAdding": true
         },
+		
+		
+		
         "ContributionLink": {
             "changeableLabel": true,
             "possibleLabels": ["make", "help", "hurt", "break"]

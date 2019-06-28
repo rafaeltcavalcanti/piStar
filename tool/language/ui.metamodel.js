@@ -19,18 +19,32 @@
 ui.setupMetamodelUI = function () {
     'use strict';
 
+/**
     if (istar.metamodel.nodes.Goal) {
         istar.metamodel.nodes.Goal.buttonStatusText = 'Adding <b>Goal</b>: Click on an actor/role/agent to add a Goal';
     }
+	*/
+	
+	if (istar.metamodel.nodes.SoftGoal) {
+        istar.metamodel.nodes.SoftGoal.buttonStatusText = 'Adding <b>SoftGoal</b>: Click on an actor/role/agent to add a SoftGoal';
+    }
+		
     if (istar.metamodel.nodes.Quality) {
         istar.metamodel.nodes.Quality.buttonStatusText = 'Adding <b>Quality</b>: Click on an actor/role/agent to add a Quality';
     }
+	
+	
+	/**
     if (istar.metamodel.nodes.Task) {
         istar.metamodel.nodes.Task.buttonStatusText = 'Adding <b>Task</b>: Click on an actor/role/agent to add a Task';
     }
+		
     if (istar.metamodel.nodes.Resource) {
         istar.metamodel.nodes.Resource.buttonStatusText = 'Adding <b>Resource</b>: Click on an actor/role/agent to add a Resource';
     }
+	*/
+
+
 
     if (istar.metamodel.containerLinks.IsALink) {
         istar.metamodel.containerLinks.IsALink.buttonLabel = 'Is A Link';
@@ -43,20 +57,20 @@ ui.setupMetamodelUI = function () {
         istar.metamodel.containerLinks.ParticipatesInLink.buttonStatusText = 'Adding <b>Participates-In</b> link: click on the source, and then on the target';
     }
 
-    if (istar.metamodel.nodeLinks.AndRefinementLink) {
-        istar.metamodel.nodeLinks.AndRefinementLink.buttonLabel = 'And';
-        istar.metamodel.nodeLinks.AndRefinementLink.buttonTooltip = 'Add And-Refinement link';
-        istar.metamodel.nodeLinks.AndRefinementLink.buttonStatusText = 'Adding <b>And-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or tasks.';
+    if (istar.metamodel.nodeLinks.DecompositionLink1) {
+        istar.metamodel.nodeLinks.DecompositionLink1.buttonLabel = 'DecompositionLink1';
+        istar.metamodel.nodeLinks.DecompositionLink1.buttonTooltip = 'Add DecompositionLink1-Refinement link';
+        istar.metamodel.nodeLinks.DecompositionLink1.buttonStatusText = 'Adding <b>DecompositionLink1-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or tasks.';
     }
-    if (istar.metamodel.nodeLinks.OrRefinementLink) {
-        istar.metamodel.nodeLinks.OrRefinementLink.buttonLabel = 'Or';
-        istar.metamodel.nodeLinks.OrRefinementLink.buttonTooltip = 'Add Or-Refinement link';
-        istar.metamodel.nodeLinks.OrRefinementLink.buttonStatusText = 'Adding <b>Or-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or tasks.';
+    if (istar.metamodel.nodeLinks.DecompositionLink2) {
+        istar.metamodel.nodeLinks.DecompositionLink2.buttonLabel = 'DecompositionLink2';
+        istar.metamodel.nodeLinks.DecompositionLink2.buttonTooltip = 'Add Or-Refinement link';
+        istar.metamodel.nodeLinks.DecompositionLink2.buttonStatusText = 'Adding <b>Or-Refinement</b> link: click first on the child, and then on the parent. It can only be applied to goals or tasks.';
     }
-    if (istar.metamodel.nodeLinks.NeededByLink) {
-        istar.metamodel.nodeLinks.NeededByLink.buttonLabel = 'Needed-By';
-        istar.metamodel.nodeLinks.NeededByLink.buttonTooltip = 'Add Needed-By link';
-        istar.metamodel.nodeLinks.NeededByLink.buttonStatusText = 'Adding <b>Needed-By</b> link: click on the Resource that is needed and on the Task that needs it.';
+    if (istar.metamodel.nodeLinks.DecompositionLink3) {
+        istar.metamodel.nodeLinks.DecompositionLink3.buttonLabel = 'DecompositionLink3';
+        istar.metamodel.nodeLinks.DecompositionLink3.buttonTooltip = 'Add DecompositionLink3 link';
+        istar.metamodel.nodeLinks.DecompositionLink3.buttonStatusText = 'Adding <b>DecompositionLink3</b> link: click on the Resource that is needed and on the Task that needs it.';
     }
     if (istar.metamodel.nodeLinks.QualificationLink) {
         istar.metamodel.nodeLinks.QualificationLink.buttonLabel = 'Qualification';

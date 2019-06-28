@@ -52,6 +52,9 @@ istar.metamodel.containerLinks.IsALink.isValid = function (source, target) {
 
     var result = {};
     var isValid = true;
+	
+	/*
+	
     if ( isValid && (source.get('type') !== target.get('type')) ) {
         isValid = false;
         result.message = 'the source and target of Is-A links must be of the same type - Actor and Actor, or Role and Role (iStar 2.0 Guide, Page 6).' +
@@ -78,6 +81,8 @@ istar.metamodel.containerLinks.IsALink.isValid = function (source, target) {
             '<br><br><img src="language/images/errors/isAMultipleLinks.svg" alt="You cannot add multiple Is-A links to the same two actors"/>';
     }
 
+	*/
+
     result.isValid = isValid;
     return result;
 };
@@ -98,6 +103,9 @@ istar.metamodel.containerLinks.ParticipatesInLink.isValid = function (source, ta
 
     var result = {};
     var isValid = true;
+	
+	/*
+	
     if ( ! source.isKindOfActor() ) {
         isValid = false;
         result.message = 'the source of a Participates-In link must be some kind of actor (iStar 2.0 Guide, Page 6)';
@@ -117,6 +125,8 @@ istar.metamodel.containerLinks.ParticipatesInLink.isValid = function (source, ta
             '<br><br><img src="language/images/errors/participatesInMultipleLinks.svg" alt="You cannot add multiple Participates-In links to the same two actors"/>';
     }
 
+	*/
+
     result.isValid = isValid;
     return result;
 };
@@ -135,6 +145,8 @@ istar.metamodel.dependencyLinks.DependencyLink.isValid = function (source, targe
     var isValid = true;
 
     //identify who is the actor - the elements themselves, or their parents
+	
+	/*
     var sourceParentId;
     var targetParentId;
     if (source.isKindOfActor()) {
@@ -173,7 +185,7 @@ istar.metamodel.dependencyLinks.DependencyLink.isValid = function (source, targe
         isValid = false;
         result.message = 'a Dependency link must involve two different actors (iStar 2.0 Guide, Page 14)';
     }
-    if (isValid && (istar.isElementTargetOfType(source, 'OrRefinementLink') || istar.isElementTargetOfType(source, 'AndRefinementLink'))) {
+    if (isValid && (istar.isElementTargetOfType(source, 'DecompositionLink2') || istar.isElementTargetOfType(source, 'DecompositionLink1'))) {
         isValid = false;
         result.message = 'a refined element cannot be the Depender Element in a Dependency link (iStar 2.0 Guide, Page 14)' +
             '. Instead, you can try to add the Dependency originating from a child, as shown in the example below.' +
@@ -186,17 +198,19 @@ istar.metamodel.dependencyLinks.DependencyLink.isValid = function (source, targe
             '<br><br><img src="language/images/errors/dependerElementContributedTo.svg" alt="You cannot add a dependency from a element that is the target of a Contribution link"/>';
     }
 
+	*/
+
     result.isValid = isValid;
     return result;
 };
 
-istar.metamodel.nodeLinks.AndRefinementLink.isValid = function (source, target) {
+istar.metamodel.nodeLinks.DecompositionLink1.isValid = function (source, target) {
     'use strict';
 
     //istar 2.0:
     //- goal->goal; goal->task; task->task; task->goal (table 1)
     //- ...the fulfillment of all the n children (n ≥ 2)(page 10) (ignored)
-    //- A parent can only be AND-refined or OR-refined, not both simultaneously (page 10)
+    //- A parent can only be DecompositionLink1-refined or OR-refined, not both simultaneously (page 10)
     // - The relationships between intentional elements (contributesTo, qualifies, neededBy, refines)
     //  apply only to elements that are wanted by the same actor (page 14)
     //- For a dependency, if a dependerElmt x exists, then x cannot be refined or
@@ -206,17 +220,19 @@ istar.metamodel.nodeLinks.AndRefinementLink.isValid = function (source, target) 
 
     var result = {};
     var isValid = true;
+	
+	/*
     if ( !(source.isTask() || source.isGoal()) ) {
         isValid = false;
-        result.message = 'the source of an AND-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
+        result.message = 'the source of an DecompositionLink1-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
     }
     if ( isValid && !(target.isTask() || target.isGoal()) ) {
         isValid = false;
-        result.message = 'the target of an AND-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
+        result.message = 'the target of an DecompositionLink1-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
     }
     if ( isValid && (source === target) ) {
         isValid = false;
-        result.message = 'you cannot make an AND-refinement link from an element onto itself';
+        result.message = 'you cannot make an DecompositionLink1-refinement link from an element onto itself';
     }
     if ( isValid && (source.isDependum() || target.isDependum()) ) {
         isValid = false;
@@ -224,7 +240,7 @@ istar.metamodel.nodeLinks.AndRefinementLink.isValid = function (source, target) 
     }
     if ( isValid && (source.attributes.parent !== target.attributes.parent) ) {
         isValid = false;
-        result.message = 'the source and target of an AND-refinement link must pertain to the same actor (iStar 2.0 Guide, Page 14)';
+        result.message = 'the source and target of an DecompositionLink1-refinement link must pertain to the same actor (iStar 2.0 Guide, Page 14)';
     }
     if ( isValid && istar.isThereLinkBetween(source, target)) {
         isValid = false;
@@ -237,18 +253,20 @@ istar.metamodel.nodeLinks.AndRefinementLink.isValid = function (source, target) 
             '. Instead, you can try to move the dependency to the sub-element, as shown in the example below.' +
             '<br><br><img src="language/images/errors/refinementToDependerELement.svg" alt="You cannot add a Refinement link targeting a Depender Element"/>';
     }
-    if ( isValid && istar.isElementTargetOfType(target, 'OrRefinementLink')) {
+    if ( isValid && istar.isElementTargetOfType(target, 'DecompositionLink2')) {
         isValid = false;
-        result.message = 'you cannot mix AND-refinements with OR-refinements targeting the same element ' +
+        result.message = 'you cannot mix DecompositionLink1-refinements with OR-refinements targeting the same element ' +
             '(iStar 2.0 Guide, Page 10).<br><br>' +
             '<img src="language/images/errors/mixAndAndOr.svg" alt="An element may be AND-refined or OR-refined, but not both"/>';
     }
+
+	*/
 
     result.isValid = isValid;
     return result;
 };
 
-istar.metamodel.nodeLinks.OrRefinementLink.isValid = function (source, target) {
+istar.metamodel.nodeLinks.DecompositionLink2.isValid = function (source, target) {
     'use strict';
 
     //istar 2.0:
@@ -263,6 +281,9 @@ istar.metamodel.nodeLinks.OrRefinementLink.isValid = function (source, target) {
 
     var result = {};
     var isValid = true;
+	
+	/*
+	
     if ( !(source.isTask() || source.isGoal()) ) {
         isValid = false;
         result.message = 'the source of an OR-refinement link must be a Goal or a Task (iStar 2.0 Guide, Table 1)';
@@ -294,12 +315,14 @@ istar.metamodel.nodeLinks.OrRefinementLink.isValid = function (source, target) {
             '. Instead, you can try to move the dependency to the sub-element, as shown in the example below.' +
             '<br><br><img src="language/images/errors/refinementToDependerELement.svg" alt="You cannot add a Refinement link targeting a Depender Element"/>';
     }
-    if ( isValid && istar.isElementTargetOfType(target, 'AndRefinementLink')) {
+    if ( isValid && istar.isElementTargetOfType(target, 'DecompositionLink1')) {
         isValid = false;
         result.message = 'you cannot mix OR-refinements with AND-refinements targeting the same element ' +
             '(iStar 2.0 Guide, Page 10).<br><br>' +
             '<img src="language/images/errors/mixAndAndOr.svg" alt="An element may be AND-refined or OR-refined, but not both"/>';
     }
+
+	*/
 
     result.isValid = isValid;
     return result;
@@ -316,6 +339,9 @@ istar.metamodel.nodeLinks.NeededByLink.isValid = function (source, target) {
 
     var result = {};
     var isValid = true;
+	
+	/*
+	
     if ( !source.isResource() ) {
         isValid = false;
         result.message = 'the source of a Needed-By link must be a Resource (iStar 2.0 Guide, Table 1)';
@@ -341,6 +367,9 @@ istar.metamodel.nodeLinks.NeededByLink.isValid = function (source, target) {
         result.message = 'there can only be one Needed-By link between the same two elements' +
             '<br><br><img src="language/images/errors/duplicatedNeededBy.svg" alt="you cannot have duplicated Needed-By links"/>';
     }
+	
+	*/
+	
     result.isValid = isValid;
     return result;
 };
@@ -361,6 +390,10 @@ istar.metamodel.nodeLinks.ContributionLink.isValid = function (source, target) {
 
     var result = {};
     var isValid = true;
+	
+	
+	/*
+	
     if ( !(source.isGoal() || source.isQuality() || source.isTask() || source.isResource()) ) {
         isValid = false;
         result.message = 'the source of a Contribution link must be a Goal, a Quality, a Task or a Resource (iStar 2.0 Guide, Table 1)';
@@ -397,6 +430,8 @@ istar.metamodel.nodeLinks.ContributionLink.isValid = function (source, target) {
             '<br><br><img src="language/images/errors/contributionToDependerELement.svg" alt="You cannot add a Contribution link to a Depender Element"/>';
     }
 
+	*/
+
     result.isValid = isValid;
     return result;
 };
@@ -415,6 +450,9 @@ istar.metamodel.nodeLinks.QualificationLink.isValid = function (source, target) 
 
     var result = {};
     var isValid = true;
+	
+	/*
+	
     if ( !(source.isQuality()) ) {
         isValid = false;
         result.message = 'the source of a Qualification link must be a Quality (iStar 2.0 Guide, Table 1)';
@@ -443,6 +481,8 @@ istar.metamodel.nodeLinks.QualificationLink.isValid = function (source, target) 
         isValid = false;
         result.message = 'you cannot have Qualification and Contribution links between the same two elements (iStar 2.0 Guide, Page 15)';
     }
+
+	*/
 
     result.isValid = isValid;
     return result;

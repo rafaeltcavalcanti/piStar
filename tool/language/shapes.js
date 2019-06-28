@@ -9,6 +9,8 @@
 	A rectangular boundary is used instead of the original circular boundary, to maximize the space available for drawing
 */
 
+
+/*
 joint.shapes.istar.Actor = joint.dia.Element.extend({
     markup: '<g><rect class="boundary" /><circle class="element actorSymbol" /><path /><text class="content"/></g>',
     defaults: joint.util.deepSupplement({
@@ -48,6 +50,12 @@ joint.shapes.istar.Actor = joint.dia.Element.extend({
         }
     }, joint.dia.Element.prototype.defaults)
 });
+
+*/
+
+
+/*
+
 
 joint.shapes.istar.Role = joint.dia.Element.extend({
     markup: '<g><rect class="boundary" /><circle class="element actorSymbol" /><path class="actorDecorator"/><text class="content"/></g>',
@@ -142,8 +150,9 @@ joint.shapes.istar.Agent = joint.dia.Element.extend({
     }, joint.dia.Element.prototype.defaults)
 });
 
+*/
 
-
+/**
 joint.shapes.istar.Goal = joint.shapes.basic.Rect.extend({
     markup: '<g class="scalable"><rect class="element"/></g><text class="content"/>',
     defaults: joint.util.deepSupplement({
@@ -156,7 +165,7 @@ joint.shapes.istar.Goal = joint.shapes.basic.Rect.extend({
                 rx: 20,
                 stroke: 'black',
                 'stroke-width': 2,
-                'vector-effect': 'non-scaling-stroke', /* prevents stroke distortion when the element is resized */
+                'vector-effect': 'non-scaling-stroke', // prevents stroke distortion when the element is resized 
                 width: 130
             },
             text: {
@@ -167,7 +176,76 @@ joint.shapes.istar.Goal = joint.shapes.basic.Rect.extend({
         }
     }, joint.shapes.basic.Rect.prototype.defaults)
 });
+*/
 
+/*
+joint.shapes.istar.SoftGoal = joint.shapes.basic.Rect.extend({
+    markup: '<g class="scalable"><rect class="element"/></g><text class="content"/>',
+    defaults: joint.util.deepSupplement({
+        type: 'SoftGoal',
+        size: {width: 90, height: 35},
+        attrs: {
+            'path': {
+				d: 'm 60.637955,-4.0358 c 17.5174,2.2042 29.9953,-10.69554 41.892705,-4.7858 22.34142,10.8714 11.2203,43.7743 -2.25,47.7322 -8.276505,2.9084 -13.960205,5.1934 -46.142805,-2.1786 -6.7454,-2.2317 -28.2652,6.0799 -35.4643,4.7143 C 9.072156,39.4809 6.491756,33.7693 3.744956,28.482 c -6.3069,-15.1266 -2.5738,-28.0439 7.981099,-34.7856 10.5549,-6.74179 27.9316,-7.30796 48.9119,2.2678 z',
+                fill: 'rgb(255,255,255)',
+                height: 30,
+                rx: 20,
+                stroke: 'black',
+                'stroke-width': 1,
+                'vector-effect': 'non-scaling-stroke', // prevents stroke distortion when the element is resized 
+                width: 130
+            },
+            text: {
+                'font-size': 12,
+                'font-weight': 'bold',
+                text: 'SoftGoal'
+            }
+        }
+    }, joint.shapes.basic.Rect.prototype.defaults)
+});
+*/
+
+
+
+joint.shapes.istar.SoftGoal = joint.shapes.basic.Path.extend({
+    markup: '<g class="scalable"><path class="element"/></g><text class="content"/>',
+    defaults: joint.util.deepSupplement({
+        type: 'SoftGoal',
+        size: {width: 90, height: 55},
+        attrs: {
+            'path': {
+				
+                // É NECESSÁRIO TROCAR AS PROPRIEDADES DO "d" PARA QUE A CARGA NO WORKSPACE SEJA DA NOVA FIGURA  -> ESTÁ HARD CODED :(
+				d: 'm 60.637955,-4.0358 c 17.5174,2.2042 29.9953,-10.69554 41.892705,-4.7858 22.34142,10.8714 11.2203,43.7743 -2.25,47.7322 -8.276505,2.9084 -13.960205,5.1934 -46.142805,-2.1786 -6.7454,-2.2317 -28.2652,6.0799 -35.4643,4.7143 C 9.072156,39.4809 6.491756,33.7693 3.744956,28.482 c -6.3069,-15.1266 -2.5738,-28.0439 7.981099,-34.7856 10.5549,-6.74179 27.9316,-7.30796 48.9119,2.2678 z',
+                
+				fill: 'rgb(255,255,255)',
+                resetOffset: true,
+                stroke: 'black',
+                'stroke-width': 1,
+                'vector-effect': 'non-scaling-stroke' 
+            },
+						
+            text: {
+                'font-size': 12,
+                'font-weight': 'bold',
+                'ref-y': '-65%',
+                text: 'SoftGoal',
+                'y-alignment': 'middle'
+            },
+        }
+    }, joint.shapes.basic.Path.prototype.defaults)
+
+});
+
+
+
+
+
+
+//* ESSES TRECHOS ABAIXO SAO PARA CRIAR A FIGURA INICAL  -- DEVE SER ALTERADA DEPOIS PARA O NOVO MODELO, CASO SEJA RETIRADA A FIGURA INICIAL FICA COM ERROS DE CARREGAMENTO DE IMAGEM
+
+
+/*
 joint.shapes.istar.Resource = joint.shapes.basic.Rect.extend({
     markup: '<g class="scalable"><rect class="element"/></g><text class="content"/>',
     defaults: joint.util.deepSupplement({
@@ -180,7 +258,7 @@ joint.shapes.istar.Resource = joint.shapes.basic.Rect.extend({
                 rx: 0,
                 stroke: 'black',
                 'stroke-width': 2,
-                'vector-effect': 'non-scaling-stroke', /* prevents stroke distortion when the element is resized */
+                'vector-effect': 'non-scaling-stroke', 
                 width: 130
             },
             text: {
@@ -191,6 +269,10 @@ joint.shapes.istar.Resource = joint.shapes.basic.Rect.extend({
         }
     }, joint.shapes.basic.Rect.prototype.defaults)
 });
+*/
+
+
+/*
 
 joint.shapes.istar.Task = joint.shapes.basic.Polygon.extend({
     markup: '<g class="scalable"><polygon class="element"/></g><text class="content"/>',
@@ -204,7 +286,7 @@ joint.shapes.istar.Task = joint.shapes.basic.Polygon.extend({
                 points: '0,18 15,0 115,0 130,18 115,36 15,36',
                 stroke: 'black',
                 'stroke-width': 2,
-                'vector-effect': 'non-scaling-stroke', /* prevents stroke distortion when the element is resized */
+                'vector-effect': 'non-scaling-stroke', 
                 width: 130
             },
             text: {
@@ -216,32 +298,45 @@ joint.shapes.istar.Task = joint.shapes.basic.Polygon.extend({
         }
     }, joint.shapes.basic.Polygon.prototype.defaults)
 });
+*/
 
-joint.shapes.istar.Quality = joint.shapes.basic.Path.extend({
+
+
+joint.shapes.istar.Operationalization = joint.shapes.basic.Path.extend({
     markup: '<g class="scalable"><path class="element"/></g><text class="content"/>',
     defaults: joint.util.deepSupplement({
-        type: 'Quality',
+        type: 'Operationalization',
         size: {width: 90, height: 55},
         attrs: {
             'path': {
-                d: 'm 60.637955,-4.0358 c 17.5174,2.2042 29.9953,-10.69554 41.892705,-4.7858 22.34142,10.8714 11.2203,43.7743 -2.25,47.7322 -8.276505,2.9084 -13.960205,5.1934 -46.142805,-2.1786 -6.7454,-2.2317 -28.2652,6.0799 -35.4643,4.7143 C 9.072156,39.4809 6.491756,33.7693 3.744956,28.482 c -6.3069,-15.1266 -2.5738,-28.0439 7.981099,-34.7856 10.5549,-6.74179 27.9316,-7.30796 48.9119,2.2678 z',
-                // d: 'M ' + 0 + ' ' + 0 + ' a 26.1831 26.1831 0 0 1 25 -3 a 18.8816 18.8816 0 0 1 27 -5 a 15.2684 15.2684 0 0 1 17.4999 3.25 a 19.182 19.182 0 0 1 24 -5 a 11.2361 11.2361 0 0 1 14.5 6.5 a 7.5085 7.5085 0 0 1 7 9 a 6.51159 6.51159 0 0 1 2.5 9.99998 a 7.67717 7.67717 0 0 1 -9 9.5 a 18.0487 18.0487 0 0 1 -17.25 3.625 a 41.1115 41.1115 0 0 1 -50.25 4.25 a 20.8059 20.8059 0 0 1 -22.25 0.25 a 28.5345 28.5345 0 0 1 -19.75 -6 a 12.0307 12.0307 0 0 1 -2.75 -21.75 a 6.06009 6.06009 0 0 1 3.74945 -5.62563 Z', //cloud shape
-                fill: 'rgb(205,254,205)',
+				
+                // É NECESSÁRIO TROCAR AS PROPRIEDADES DO "d" PARA QUE A CARGA NO WORKSPACE SEJA DA NOVA FIGURA  -> ESTÁ HARD CODED :(
+				d: 'm 60.637955,-4.0358 c 17.5174,2.2042 29.9953,-10.69554 41.892705,-4.7858 22.34142,10.8714 11.2203,43.7743 -2.25,47.7322 -8.276505,2.9084 -13.960205,5.1934 -46.142805,-2.1786 -6.7454,-2.2317 -28.2652,6.0799 -35.4643,4.7143 C 9.072156,39.4809 6.491756,33.7693 3.744956,28.482 c -6.3069,-15.1266 -2.5738,-28.0439 7.981099,-34.7856 10.5549,-6.74179 27.9316,-7.30796 48.9119,2.2678 z',
+                
+				fill: 'rgb(255,255,255)',
                 resetOffset: true,
                 stroke: 'black',
-                'stroke-width': 2,
-                'vector-effect': 'non-scaling-stroke' /* prevents stroke distortion when the element is resized */
+                'stroke-width': 3.5,
+                'vector-effect': 'non-scaling-stroke' 
             },
+						
             text: {
                 'font-size': 12,
                 'font-weight': 'bold',
                 'ref-y': '-65%',
-                text: 'Quality',
+                text: 'Operationalization',
                 'y-alignment': 'middle'
             },
         }
     }, joint.shapes.basic.Path.prototype.defaults)
 });
+
+
+
+
+
+
+
 
 joint.shapes.istar.ParticipatesInLink = joint.dia.Link.define('ParticipatesInLink',
     {
@@ -429,7 +524,7 @@ joint.shapes.istar.DependencyLink = joint.dia.Link.define('DependencyLink',
 }
 );
 
-joint.shapes.istar.AndRefinementLink = joint.dia.Link.define('AndRefinementLink',
+joint.shapes.istar.DecompositionLink1 = joint.dia.Link.define('DecompositionLink1',
     {
         attrs: {
             line: {
@@ -438,7 +533,7 @@ joint.shapes.istar.AndRefinementLink = joint.dia.Link.define('AndRefinementLink'
                 stroke: 'black',
                 'stroke-width': 1,
                 'targetMarker': {
-                    'd': 'm 10,-6 l 0,12',
+                    'd': 'm 10, 12',
                     fill: 'none',
                     'stroke-width': 1.2,
                     'type': 'path',
@@ -468,7 +563,7 @@ joint.shapes.istar.AndRefinementLink = joint.dia.Link.define('AndRefinementLink'
     }
 );
 
-joint.shapes.istar.OrRefinementLink = joint.dia.Link.define('OrRefinementLink',
+joint.shapes.istar.And = joint.dia.Link.define('And',
     {
         attrs: {
             line: {
@@ -476,8 +571,9 @@ joint.shapes.istar.OrRefinementLink = joint.dia.Link.define('OrRefinementLink',
                 fill: 'none',
                 stroke: 'black',
                 'stroke-width': 1,
-                targetMarker: {
-                    'd': 'm 12,-6 l -12,6 12,6 z',
+                'targetMarker': {
+					'd': 'm 10,-6 l 0, 12 z',
+                    //'d': 'm 12,-6 l -12,6 12,6 z',
                      fill: 'black',
                     'stroke-width': 1.2,
                     'type': 'path',
@@ -507,7 +603,7 @@ joint.shapes.istar.OrRefinementLink = joint.dia.Link.define('OrRefinementLink',
     }
 );
 
-joint.shapes.istar.NeededByLink = joint.dia.Link.define('NeededByLink',
+joint.shapes.istar.Or = joint.dia.Link.define('Or',
     {
         attrs: {
             line: {
@@ -516,9 +612,8 @@ joint.shapes.istar.NeededByLink = joint.dia.Link.define('NeededByLink',
                 stroke: 'black',
                 'stroke-width': 1,
                 targetMarker: {
-                    d:    'm 1, 0         a 4,4 0 1,0 8,0         a 4,4 0 1,0 -8,0',
-                    // d: 'M cx - r, cy   a r,r 0 1,0 (r * 2),0   a r,r 0 1,0 -(r * 2),0', from https://codepen.io/jakob-e/pen/bgBegJ
-                    fill: 'black',
+                    'd': 'm 10,-6 l 0, 6 12,6 z',
+					fill: 'black',
                     stroke: 'black',
                     type: 'path', //using path instead of circle to correctly position the circle
                 }
@@ -554,6 +649,8 @@ joint.shapes.istar.NeededByLink = joint.dia.Link.define('NeededByLink',
         ]
     }
 );
+
+
 
 joint.shapes.istar.ContributionLink = joint.dia.Link.define('ContributionLink',
     {
@@ -612,6 +709,7 @@ joint.shapes.istar.ContributionLink = joint.dia.Link.define('ContributionLink',
     }
 );
 
+
 joint.shapes.istar.QualificationLink = joint.dia.Link.define('QualificationLink',
     {
         attrs: {
@@ -645,6 +743,8 @@ joint.shapes.istar.QualificationLink = joint.dia.Link.define('QualificationLink'
         ]
     }
 );
+
+
 
 /*definition of globals to prevent undue JSHint warnings*/
 /*globals joint:false */

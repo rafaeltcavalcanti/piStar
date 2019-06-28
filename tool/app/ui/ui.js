@@ -590,12 +590,20 @@ ui.addElementOnPaper = function (options) {
     try {
         var currentAddingElement = ui.states.editor.ADDING.data.typeNameToAdd;
         var isValid = {isValid: false};
+		
+		
+		
+		//REMOVENDO AS VALIDACOES PARA INSERIR NA TELA
+		
+		
+		
         if (ui.states.editor.isAddingNode()) {
             if (istar.metamodel.nodes[currentAddingElement]) {
-                if (istar.metamodel.nodes[currentAddingElement].canBeOnPaper) {
+                //if (istar.metamodel.nodes[currentAddingElement].canBeOnPaper) {
                     isValid = istar.metamodel.nodes[currentAddingElement].isValid();
-                }
-                else {
+                //}
+                /*
+				else {
                     isValid = {
                         message: 'a ' + currentAddingElement + ' cannot be added directly to the paper, it must be added <b>inside</b> an Actor.'
                     };
@@ -603,6 +611,7 @@ ui.addElementOnPaper = function (options) {
                         isValid.message += '<br><br>If you are trying to add a dependency link, please try the "Dependency..." button';
                     }
                 }
+				*/
             }
         }
         else if (ui.states.editor.isAddingContainer()) {
@@ -625,6 +634,9 @@ ui.addElementOnPaper = function (options) {
         else {
             ui.displayInvalidLinkMessage(isValid.message);
         }
+		
+		
+		
     } catch (e) {
         console.log(e);
     } finally {
@@ -638,6 +650,13 @@ ui.addElementOnContainer = function (cellView, options) {
     try {
         var currentAddingElement = ui.states.editor.ADDING.data.typeNameToAdd;
         var isValid = {isValid: false};
+		
+		
+		//REMOVENDO AS VALIDACOES PARA INSERIR NA TELA
+		
+		
+		
+		/*
         if (istar.metamodel.nodes[currentAddingElement]) {
             if (istar.metamodel.nodes[currentAddingElement].canBeInnerElement) {
                 isValid = istar.metamodel.nodes[currentAddingElement].isValid(cellView.model);
@@ -648,6 +667,7 @@ ui.addElementOnContainer = function (cellView, options) {
                 };
             }
         }
+		*/
 
         if (isValid.isValid) {
             //centers the position
@@ -666,6 +686,9 @@ ui.addElementOnContainer = function (cellView, options) {
         else {
             ui.displayInvalidLinkMessage(isValid.message);
         }
+		
+		
+		
     } catch (e) {
         console.log(e);
         ui.states.editor.transitionTo(ui.states.editor.VIEWING);

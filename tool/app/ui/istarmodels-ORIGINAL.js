@@ -8,8 +8,6 @@
 
 istar.models = istar.models || {};  //prevents overriding the variable, while also preventing working with a null variable
 
-
-/*
 istar.models.processModelParameter = function () {
     "use strict";
 
@@ -21,9 +19,6 @@ istar.models.processModelParameter = function () {
 
     return istar.models[modelId];
 };
-*/
-
-
 
 istar.models.getAllUrlParams = function () {
     "use strict";
@@ -94,13 +89,9 @@ istar.models.getAllUrlParams = function () {
     return obj;
 };
 
-
-/*
 istar.models.loadPistarWelcome = function () {
     istar.fileManager.loadModel(this.pistarWelcome);
 };
-*/
-
 
 // istar.models.experimentExample = function () {
 //     console.log('Go drink some water, this will take a while');
@@ -113,7 +104,7 @@ istar.models.loadPistarWelcome = function () {
 //             var name = 'element ' + (j * 40 + i);
 //             var priority = istar.models.util.randomIntegerFromMinToMax(1, 101);
 //
-//             var creationFunction = istar.addSoftGoal;
+//             var creationFunction = istar.addGoal;
 //             if (kindOfElement === 1) creationFunction = istar.addQuality;
 //             else if (kindOfElement === 2) creationFunction = istar.addTask;
 //             else if (kindOfElement === 3) creationFunction = istar.addResource;
@@ -133,10 +124,6 @@ istar.models.loadPistarWelcome = function () {
 // };
 
 
-
-// MODELO INICIAL NA TELA = CASO QUEIRA COLOCAR UM EXEMPLO , CRIAR DENTRO DESSA FUNÇÃO
-
-/*
 istar.models.pistarWelcome = {
     "actors": [
         {
@@ -152,7 +139,7 @@ istar.models.pistarWelcome = {
                 {
                     "id": "71c7aeb6-fb99-40a1-bcd1-5a29e5b45252",
                     "text": "i* models created",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 249,
                     "y": 87,
                     "customProperties": {
@@ -171,12 +158,12 @@ istar.models.pistarWelcome = {
                 },
                 {
                     "id": "e159ce92-b29d-4fdc-a533-ee1e904f9f57",
-                    "text": "Good Operationalization",
-                    "type": "istar.Operationalization",
+                    "text": "Good Quality",
+                    "type": "istar.Quality",
                     "x": 126,
                     "y": 61,
                     "customProperties": {
-                        "Description": "By Good Operationalization we mean good *visual* Operationalization:\n - no visual artefacts due to compression or rescaling;\n - aesthetically similar to the diagrams from the i* Wiki guides"
+                        "Description": "By Good Quality we mean good *visual* quality:\n - no visual artefacts due to compression or rescaling;\n - aesthetically similar to the diagrams from the i* Wiki guides"
                     }
                 }
             ]
@@ -191,7 +178,7 @@ istar.models.pistarWelcome = {
                 {
                     "id": "61eb4e04-b5f0-4a7d-aea1-22651e470867",
                     "text": "Continuous Improvement",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 638,
                     "y": 211,
                     "customProperties": {
@@ -300,7 +287,7 @@ istar.models.pistarWelcome = {
                 {
                     "id": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d",
                     "text": "Elements modifiable",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 551,
                     "y": 357,
                     "customProperties": {
@@ -310,7 +297,7 @@ istar.models.pistarWelcome = {
                 {
                     "id": "3696a947-a1cd-42b1-8804-794bd01aa0f9",
                     "text": "Improved Links",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 752,
                     "y": 343,
                     "customProperties": {
@@ -349,7 +336,7 @@ istar.models.pistarWelcome = {
         },
         {
             "id": "a3ece632-030b-4588-a7fa-077e84ed3e44",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "8d716a61-1ca4-44f4-934c-26166ea44d11",
             "target": "71c7aeb6-fb99-40a1-bcd1-5a29e5b45252"
         },
@@ -383,19 +370,19 @@ istar.models.pistarWelcome = {
         },
         {
             "id": "9fab6d1a-6445-49ef-873e-caa049e306ae",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "1f011a05-50ff-47b4-bdf6-e6c9227eef70",
             "target": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d"
         },
         {
             "id": "95a46d95-c6bd-4079-ada3-dfbd650f3fc6",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "5562be02-998b-4a7b-8bb9-355d84b3c06b",
             "target": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d"
         },
         {
             "id": "d36eb6f5-2f2e-4f42-b4f6-bce5d2f5b1d3",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "f9035e8c-0294-44a8-a93e-85a349d2f21a",
             "target": "ab99b45b-ee62-4a1c-9d4d-1312dbfd3d7d"
         },
@@ -498,10 +485,6 @@ istar.models.pistarWelcome = {
         }
     }
 };
-*/
-
-
-
 
 istar.models.travelReimbursement = {
     "actors": [
@@ -515,28 +498,28 @@ istar.models.travelReimbursement = {
                 {
                     "id": "8f5b5975-10bc-44b5-92b2-c53e2394b2c9",
                     "text": "Travel organized",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 598,
                     "y": 29
                 },
                 {
                     "id": "d7350e31-1d29-46b0-bce5-e191189720cd",
                     "text": "Authorization obtained",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 394,
                     "y": 91
                 },
                 {
                     "id": "c3f53c8d-b421-4c60-8dbf-03b07978295b",
                     "text": "Request prepared",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 321,
                     "y": 160
                 },
                 {
                     "id": "4e767af4-fd1e-4e3e-8a82-3740521e576a",
                     "text": "Authorization signed",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 491,
                     "y": 145
                 },
@@ -557,7 +540,7 @@ istar.models.travelReimbursement = {
                 {
                     "id": "0055d468-1097-43b2-95bf-1781730b1985",
                     "text": "No errors",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 276,
                     "y": 378
                 },
@@ -578,21 +561,21 @@ istar.models.travelReimbursement = {
                 {
                     "id": "0afa08e3-2306-40c8-9d40-2c144b748664",
                     "text": "Quick booking",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 423,
                     "y": 388
                 },
                 {
                     "id": "16d9b9bf-fdef-4832-8f7d-8dcb42513371",
                     "text": "Trip booked",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 741,
                     "y": 184
                 },
                 {
                     "id": "d8991d04-c2a6-45f0-a3ed-3ebed2a2d86d",
                     "text": "Trip parts booked",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 678,
                     "y": 261
                 },
@@ -606,14 +589,14 @@ istar.models.travelReimbursement = {
                 {
                     "id": "f34b98b9-6cba-4410-8a49-451e00049e43",
                     "text": "Tickets booked",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 634,
                     "y": 342
                 },
                 {
                     "id": "94b43d28-480c-4a22-92ed-c8ba69a1d111",
                     "text": "Accommodation booked",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 796,
                     "y": 331
                 },
@@ -634,14 +617,14 @@ istar.models.travelReimbursement = {
                 {
                     "id": "89643e71-e10f-4474-9ac6-3ddd413bfda8",
                     "text": "Conference hotel booked",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 811,
                     "y": 415
                 },
                 {
                     "id": "b73684df-4238-47d2-ae5a-e9d88df9559a",
                     "text": "Budget hotel booked",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 1033,
                     "y": 357
                 },
@@ -683,14 +666,14 @@ istar.models.travelReimbursement = {
                 {
                     "id": "c8e311fd-2a1a-40f1-b5e5-c62eb3e3a397",
                     "text": "Comfort",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 485,
                     "y": 580
                 },
                 {
                     "id": "685e4589-9717-487f-aa94-2eab2f7c5b46",
                     "text": "Minimal own payments",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 911,
                     "y": 596
                 }
@@ -713,7 +696,7 @@ istar.models.travelReimbursement = {
                 {
                     "id": "7897dbdc-5dd5-4332-9e31-cac22e01f1e1",
                     "text": "Details validated",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 195,
                     "y": 882
                 },
@@ -778,7 +761,7 @@ istar.models.travelReimbursement = {
         {
             "id": "fe9bc590-394b-4585-be24-66419eb353b9",
             "text": "Online form processed",
-            "type": "istar.SoftGoal",
+            "type": "istar.Goal",
             "x": 389,
             "y": 674,
             "source": "9bb7e927-3dee-4485-8fda-01954d324c88",
@@ -787,7 +770,7 @@ istar.models.travelReimbursement = {
         {
             "id": "dc25d9f6-7aea-46fd-8b59-1e317f5017f1",
             "text": "Trip bundle booked",
-            "type": "istar.SoftGoal",
+            "type": "istar.Goal",
             "x": 1193,
             "y": 315,
             "source": "f2ad4e2a-1b6d-44ce-94d7-28aee4e08d3d",
@@ -839,22 +822,22 @@ istar.models.travelReimbursement = {
             "type": "istar.DependencyLink",
             "source": "f26ec7d2-3133-42b0-b54c-2b4695e9ee1b",
             "target": "3c57900f-ba6a-4277-ba86-a688b23628a8"
-        },/*
+        },
         {
             "id": "933bf752-403a-4625-9216-980d6134e824",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "7897dbdc-5dd5-4332-9e31-cac22e01f1e1",
             "target": "ac7c22c2-6538-4fe3-a14f-8f8a2233a472"
         },
         {
             "id": "b6f44d15-563d-4b1c-99cc-355ab6f49691",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "609eedc5-29e7-4360-b9ad-5ca23076033c",
             "target": "ac7c22c2-6538-4fe3-a14f-8f8a2233a472"
         },
         {
             "id": "e341c73c-1840-4794-a4ab-aa173c394bb1",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "334c70d0-7786-4dda-8340-aa63c921bc03",
             "target": "ac7c22c2-6538-4fe3-a14f-8f8a2233a472"
         },
@@ -872,31 +855,31 @@ istar.models.travelReimbursement = {
         },
         {
             "id": "60d2a322-dc93-4bcd-98f4-1f22842fdc43",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "d7350e31-1d29-46b0-bce5-e191189720cd",
             "target": "8f5b5975-10bc-44b5-92b2-c53e2394b2c9"
         },
         {
             "id": "311e7939-1fda-49f2-9e6a-4930380f0817",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "c3f53c8d-b421-4c60-8dbf-03b07978295b",
             "target": "d7350e31-1d29-46b0-bce5-e191189720cd"
         },
         {
             "id": "c9e13288-79d1-43a3-9ad1-20da47731a27",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "4e767af4-fd1e-4e3e-8a82-3740521e576a",
             "target": "d7350e31-1d29-46b0-bce5-e191189720cd"
-        },*/
+        },
         {
             "id": "e808d70e-b972-46e0-ae6f-bbbcca9b60a3",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "191249f9-d249-47db-b5f2-c09449307eb4",
             "target": "c3f53c8d-b421-4c60-8dbf-03b07978295b"
         },
         {
             "id": "5e9fb272-fc73-4a52-889b-c4c3017783e4",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "9bb7e927-3dee-4485-8fda-01954d324c88",
             "target": "c3f53c8d-b421-4c60-8dbf-03b07978295b"
         },
@@ -908,13 +891,13 @@ istar.models.travelReimbursement = {
         },
         {
             "id": "d071e095-737f-4269-9fc4-fbb05ffc563a",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "37b28c3f-7554-4c62-91cd-44cac0873977",
             "target": "4e767af4-fd1e-4e3e-8a82-3740521e576a"
         },
         {
             "id": "f42a938f-428b-495f-aec1-3edb951312c8",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "102cbb1c-5600-4058-bed9-cc9e1ad1d9e9",
             "target": "4e767af4-fd1e-4e3e-8a82-3740521e576a"
         },
@@ -948,85 +931,85 @@ istar.models.travelReimbursement = {
         },
         {
             "id": "5e8dd76c-34ba-49af-8b8d-4cfac6e2aacb",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "16d9b9bf-fdef-4832-8f7d-8dcb42513371",
             "target": "8f5b5975-10bc-44b5-92b2-c53e2394b2c9"
         },
         {
             "id": "4d0aabb8-96a5-4964-a777-021241dbc464",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "d8991d04-c2a6-45f0-a3ed-3ebed2a2d86d",
             "target": "16d9b9bf-fdef-4832-8f7d-8dcb42513371"
         },
         {
             "id": "078a7367-7b42-4015-a239-ebc388e3db99",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "f2ad4e2a-1b6d-44ce-94d7-28aee4e08d3d",
             "target": "16d9b9bf-fdef-4832-8f7d-8dcb42513371"
         },
         {
             "id": "3b03d5e9-6d9c-4e7b-92e7-74a395db65ef",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "f34b98b9-6cba-4410-8a49-451e00049e43",
             "target": "d8991d04-c2a6-45f0-a3ed-3ebed2a2d86d"
         },
         {
             "id": "c8241e9f-242b-4b90-a134-601ad498420c",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "94b43d28-480c-4a22-92ed-c8ba69a1d111",
             "target": "d8991d04-c2a6-45f0-a3ed-3ebed2a2d86d"
         },
         {
             "id": "2d3d2252-e074-49ae-8896-c1e838aa9673",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "4934265e-abf6-4fe1-91c9-38c2a6aadcb0",
             "target": "f34b98b9-6cba-4410-8a49-451e00049e43"
         },
         {
             "id": "1c0ac449-4e4a-4477-9b99-767670553c78",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "11d870d2-7987-45c9-a36a-7b177219ae50",
             "target": "f34b98b9-6cba-4410-8a49-451e00049e43"
         },
         {
             "id": "dda09e92-4419-4d64-8e3e-a3df77c44ea3",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "89643e71-e10f-4474-9ac6-3ddd413bfda8",
             "target": "94b43d28-480c-4a22-92ed-c8ba69a1d111"
         },
         {
             "id": "5790eee4-96fe-44f4-8e14-3b8a548c5ef6",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "b73684df-4238-47d2-ae5a-e9d88df9559a",
             "target": "94b43d28-480c-4a22-92ed-c8ba69a1d111"
         },
         {
             "id": "55f74dce-18ba-4da3-bc8a-aa48fd030633",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "1747e206-fa35-4229-b4be-67b3893e84d1",
             "target": "11d870d2-7987-45c9-a36a-7b177219ae50"
         },
         {
             "id": "f60694e4-2436-4c76-becf-c230044bf824",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "49da8a06-b243-4c6e-9c50-dded496bec94",
             "target": "11d870d2-7987-45c9-a36a-7b177219ae50"
         },
         {
             "id": "d5ff1904-a9c6-4fba-ae3b-cb1e58102ad6",
-            "type": "istar.DecompositionLink3",
+            "type": "istar.NeededByLink",
             "source": "8a867e08-5a70-4816-ab02-1d84cf1b79dd",
             "target": "49da8a06-b243-4c6e-9c50-dded496bec94"
         },
         {
             "id": "1c8fb2a5-ca39-40a3-bf75-dcfe04a51c6e",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "13efea03-96a0-4162-b89e-f46efc9a96c4",
             "target": "b73684df-4238-47d2-ae5a-e9d88df9559a"
         },
         {
             "id": "47c531d5-eff8-4025-9fbb-af7e758182b9",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "59d154e2-8af7-48da-9f55-195ffebab399",
             "target": "b73684df-4238-47d2-ae5a-e9d88df9559a"
         },
@@ -1260,7 +1243,7 @@ istar.models.travelReimbursement = {
         "height": 1100,
         "name": "University travel reimbursement",
         "customProperties": {
-            "Description": "Students must organize their travel (e.g., to conferences) and have several SoftGoals to achieve, and options to achieve them. To achieve their SoftGoals, students rely on other parties such as a Travel Agency and the university’s trip management information system.",
+            "Description": "Students must organize their travel (e.g., to conferences) and have several goals to achieve, and options to achieve them. To achieve their goals, students rely on other parties such as a Travel Agency and the university’s trip management information system.",
             "Origin": "This is the example presented in the iStar 2.0 Language Guide, which can be accessed through the Help menu"
         }
     }
@@ -1281,7 +1264,7 @@ istar.models.smartHome = {
                 {
                     "id": "0f052835-9f3f-491a-a3f0-c70d2001fca5",
                     "text": "Temperature be managed",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 588,
                     "y": 131,
                     "customProperties": {
@@ -1292,7 +1275,7 @@ istar.models.smartHome = {
                 {
                     "id": "3b1813ea-e6b1-40ec-a11d-49cda0c82324",
                     "text": "Reliability",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 883,
                     "y": 43,
                     "customProperties": {
@@ -1302,7 +1285,7 @@ istar.models.smartHome = {
                 {
                     "id": "b76387a2-ca54-468d-88d1-45227b47ff83",
                     "text": "Energy spent wisely",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 453,
                     "y": 35,
                     "customProperties": {
@@ -1312,7 +1295,7 @@ istar.models.smartHome = {
                 {
                     "id": "834513e9-a5d2-43fa-ae24-3c57f645064a",
                     "text": "Adaptability",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 1018,
                     "y": 78,
                     "customProperties": {
@@ -1443,7 +1426,7 @@ istar.models.smartHome = {
                 {
                     "id": "65524a26-5718-499e-a023-14066a7725d9",
                     "text": "Lights be managed",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 1008,
                     "y": 249,
                     "customProperties": {
@@ -1513,7 +1496,7 @@ istar.models.smartHome = {
                 {
                     "id": "36f19256-e85f-48c8-a2b1-6b5c68760f93",
                     "text": "Safety",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 612,
                     "y": 340,
                     "customProperties": {
@@ -1653,7 +1636,7 @@ istar.models.smartHome = {
                 {
                     "id": "9126a353-2812-47fe-bfa4-c7b1c3672952",
                     "text": "Entertainment",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 1051,
                     "y": 517,
                     "customProperties": {
@@ -1763,7 +1746,7 @@ istar.models.smartHome = {
                 {
                     "id": "ee2ea7fc-93ad-40bc-b11a-b7b87c00e315",
                     "text": "Tenant is well nourished",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 725,
                     "y": 677,
                     "customProperties": {
@@ -1773,7 +1756,7 @@ istar.models.smartHome = {
                 {
                     "id": "f504dbd8-3abe-4543-bb7d-7fcbc7e42c23",
                     "text": "Provide meals",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 484,
                     "y": 779,
                     "customProperties": {
@@ -1783,7 +1766,7 @@ istar.models.smartHome = {
                 {
                     "id": "9a938a9a-d944-48f2-b9a1-d8fc967b1d2a",
                     "text": "Save money",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 375,
                     "y": 676.5,
                     "customProperties": {
@@ -1873,7 +1856,7 @@ istar.models.smartHome = {
                 {
                     "id": "1bf4a5a9-e155-427f-8bf2-cf0111dc01bd",
                     "text": "Customization",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 329,
                     "y": 1063,
                     "customProperties": {
@@ -1883,7 +1866,7 @@ istar.models.smartHome = {
                 {
                     "id": "9fece159-1b77-4895-b926-05c4bd762fa2",
                     "text": "Manage food stock supply",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 602,
                     "y": 936,
                     "customProperties": {
@@ -2118,7 +2101,7 @@ istar.models.smartHome = {
         {
             "id": "c4120857-f974-419f-9494-28a05eab42d3",
             "text": "Customization",
-            "type": "istar.Operationalization",
+            "type": "istar.Quality",
             "x": 333,
             "y": 1213,
             "customProperties": {
@@ -2130,7 +2113,7 @@ istar.models.smartHome = {
         {
             "id": "b6b637bf-9f7e-445e-baed-368754d8a00d",
             "text": "Fast response",
-            "type": "istar.Operationalization",
+            "type": "istar.Quality",
             "x": 1383,
             "y": 819,
             "customProperties": {
@@ -2166,7 +2149,7 @@ istar.models.smartHome = {
         {
             "id": "def7f0ee-cfd6-4e95-91d5-b3b5fbcdb033",
             "text": "Enviroment monitored",
-            "type": "istar.SoftGoal",
+            "type": "istar.Goal",
             "x": 1333,
             "y": 174,
             "customProperties": {
@@ -2527,19 +2510,19 @@ istar.models.smartHome = {
         },
         {
             "id": "9274baa9-1c30-49a8-af07-91928c3e828b",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "490feaca-a7f4-470f-a2db-d5c8073f5f56",
             "target": "0f052835-9f3f-491a-a3f0-c70d2001fca5"
         },
         {
             "id": "7897cc02-8f54-45c7-be2f-b98b4bda6953",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "3eb43835-be08-42fb-9158-0e1c45d66bbb",
             "target": "0f052835-9f3f-491a-a3f0-c70d2001fca5"
         },
         {
             "id": "ed6ebe94-e22f-422d-8409-55c9965850fc",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "e54e1fd2-9c11-4097-b296-35dd65763bda",
             "target": "0f052835-9f3f-491a-a3f0-c70d2001fca5"
         },
@@ -2566,7 +2549,7 @@ istar.models.smartHome = {
         },
         {
             "id": "687ae564-ff73-4d20-9bd2-6b21ff78187a",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "bab3e64d-95c4-4e60-b105-8fa38aad0093",
             "target": "490feaca-a7f4-470f-a2db-d5c8073f5f56",
             "customProperties": {
@@ -2575,7 +2558,7 @@ istar.models.smartHome = {
         },
         {
             "id": "947a17b5-5ac6-4018-9904-0caa88ba1b3b",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "b2e93b23-d7f1-48f2-be68-dafef2f9bade",
             "target": "490feaca-a7f4-470f-a2db-d5c8073f5f56",
             "customProperties": {
@@ -2584,7 +2567,7 @@ istar.models.smartHome = {
         },
         {
             "id": "7143e055-0a20-4a5d-b909-1161f9b17a89",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "5e0579a1-57d6-4de1-ad56-0d7810a5b52d",
             "target": "3eb43835-be08-42fb-9158-0e1c45d66bbb",
             "customProperties": {
@@ -2593,7 +2576,7 @@ istar.models.smartHome = {
         },
         {
             "id": "f1d665e3-9360-4662-aa65-b05641d4d8c4",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "9ddc02f7-59a9-4565-9721-6e60dc66f10c",
             "target": "3eb43835-be08-42fb-9158-0e1c45d66bbb",
             "customProperties": {
@@ -2602,7 +2585,7 @@ istar.models.smartHome = {
         },
         {
             "id": "d72cf112-22ca-4918-9c7a-0ac7a558b18e",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "623862d4-6b91-4278-83bf-342e66ef3bda",
             "target": "e54e1fd2-9c11-4097-b296-35dd65763bda",
             "customProperties": {
@@ -2611,7 +2594,7 @@ istar.models.smartHome = {
         },
         {
             "id": "161d5ffb-22d5-47a2-aa22-e56e93c7c8bf",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "9d534e15-95a0-44ea-a1b4-8bab3b1fd6c4",
             "target": "e54e1fd2-9c11-4097-b296-35dd65763bda",
             "customProperties": {
@@ -2620,37 +2603,37 @@ istar.models.smartHome = {
         },
         {
             "id": "e72a1002-9f28-4644-82e8-e075302950c5",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "add6b9fe-6314-4eab-bb22-61d5717c54ce",
             "target": "65524a26-5718-499e-a023-14066a7725d9"
         },
         {
             "id": "eb451ccf-c5e2-4f70-afa9-84ca8cc18c63",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "0d89c849-6ee1-4b96-9102-103edf016542",
             "target": "add6b9fe-6314-4eab-bb22-61d5717c54ce"
         },
         {
             "id": "9661a69f-2f2d-4d77-aca0-bf62bf820adc",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "83005b8f-bfe4-4378-995b-78407139c97f",
             "target": "add6b9fe-6314-4eab-bb22-61d5717c54ce"
         },
         {
             "id": "c86b47c0-9abe-40c1-b109-f40ebe8640e2",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "ee6f36f2-01db-485d-a304-20f41f90d33b",
             "target": "0d89c849-6ee1-4b96-9102-103edf016542"
         },
         {
             "id": "2b46e6b7-aeb8-4229-a959-7a5621725fe7",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "93365266-ac6f-48ba-9c2d-c1f110ebb5dc",
             "target": "0d89c849-6ee1-4b96-9102-103edf016542"
         },
         {
             "id": "3966f745-f3a3-4d51-b9fa-1b1052d33d7a",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "e3beae74-b939-47d8-89fb-2ed6d446a2e8",
             "target": "83005b8f-bfe4-4378-995b-78407139c97f",
             "customProperties": {
@@ -2659,7 +2642,7 @@ istar.models.smartHome = {
         },
         {
             "id": "55078b46-ebc7-48fb-a125-a8839eb784a5",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "e1943868-5e88-41f4-9368-f10e48a360ca",
             "target": "83005b8f-bfe4-4378-995b-78407139c97f",
             "customProperties": {
@@ -2668,7 +2651,7 @@ istar.models.smartHome = {
         },
         {
             "id": "40ba72f5-5de0-4c8b-8f34-f3bb63a57d39",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "62659e86-92a5-4d32-842a-8a44a4646c6d",
             "target": "0e54535c-be18-4ee6-a347-40f0261a6b50",
             "customProperties": {
@@ -2677,7 +2660,7 @@ istar.models.smartHome = {
         },
         {
             "id": "03b82967-9161-4801-8ba2-d6336ecf62f6",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "b9db7012-9e2d-4e85-8beb-ad3e93dc312a",
             "target": "0e54535c-be18-4ee6-a347-40f0261a6b50",
             "customProperties": {
@@ -2686,7 +2669,7 @@ istar.models.smartHome = {
         },
         {
             "id": "29f40daf-d232-45d2-9922-ab6135cf4c8e",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "2946613f-b8aa-4d2d-afe0-e1a5ee8bea9d",
             "target": "632c6d4f-632d-4d45-b4a2-5764744184ef",
             "customProperties": {
@@ -2695,7 +2678,7 @@ istar.models.smartHome = {
         },
         {
             "id": "956323e1-cae7-4566-9671-25cc8d2495e6",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "d8c3d54b-d979-4872-a435-847c5fc11d89",
             "target": "632c6d4f-632d-4d45-b4a2-5764744184ef",
             "customProperties": {
@@ -2704,19 +2687,19 @@ istar.models.smartHome = {
         },
         {
             "id": "fd2ba13b-e299-4456-b569-eaaf3b6f4130",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "b9db7012-9e2d-4e85-8beb-ad3e93dc312a",
             "target": "39e3358a-79c9-4a82-93c9-bc77d26c6610"
         },
         {
             "id": "99185b04-4c14-486b-ae71-4bdd87bec92f",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "d8c3d54b-d979-4872-a435-847c5fc11d89",
             "target": "39e3358a-79c9-4a82-93c9-bc77d26c6610"
         },
         {
             "id": "e458390e-d1e9-424c-8e5d-93788f2a8fb0",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "bab3e64d-95c4-4e60-b105-8fa38aad0093",
             "target": "39e3358a-79c9-4a82-93c9-bc77d26c6610"
         },
@@ -2739,7 +2722,7 @@ istar.models.smartHome = {
         },
         {
             "id": "1a848f7b-09f5-46d1-b8fe-4669d1023837",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "ca7c6b8c-e155-4c8f-a8d0-ce86cc1c1a02",
             "target": "9452a1a3-07dc-49a1-9534-3883aea9d55f",
             "customProperties": {
@@ -2748,7 +2731,7 @@ istar.models.smartHome = {
         },
         {
             "id": "4c7e1bfa-646f-420c-a21d-80f3464f2c80",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "47a0c4b6-9844-4ff3-8ba7-8db7923805bd",
             "target": "9452a1a3-07dc-49a1-9534-3883aea9d55f",
             "customProperties": {
@@ -2757,13 +2740,13 @@ istar.models.smartHome = {
         },
         {
             "id": "de5fa6d3-27b5-4352-9d3f-1b0fb77f0e90",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "ca7c6b8c-e155-4c8f-a8d0-ce86cc1c1a02",
             "target": "39e3358a-79c9-4a82-93c9-bc77d26c6610"
         },
         {
             "id": "afb79f27-e868-4869-85c9-536534a64952",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "c0384b04-9745-43a7-ad96-17cc6a83f613",
             "target": "336c8a20-26f7-4dc5-a20f-8b5925c7f439",
             "customProperties": {
@@ -2772,7 +2755,7 @@ istar.models.smartHome = {
         },
         {
             "id": "db764ee9-7569-4469-9922-a50d788986f2",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "6a12bc40-749d-49a3-a70d-84bccca84167",
             "target": "336c8a20-26f7-4dc5-a20f-8b5925c7f439",
             "customProperties": {
@@ -2781,37 +2764,37 @@ istar.models.smartHome = {
         },
         {
             "id": "5c3cf396-365c-42f8-9bda-6afe7b1b5e9e",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "c0384b04-9745-43a7-ad96-17cc6a83f613",
             "target": "39e3358a-79c9-4a82-93c9-bc77d26c6610"
         },
         {
             "id": "da71f16e-e8f0-438f-9f50-23f9d169ffd5",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "494a5feb-2f56-4434-832a-534ab061a6b0",
             "target": "6824c565-ae86-4cf9-ba0a-c6922f343028"
         },
         {
             "id": "c865a91f-6c5f-4c5d-8fa8-c86a63e1cc56",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "5af70b15-c536-435e-ad47-1f4aa592dabe",
             "target": "6824c565-ae86-4cf9-ba0a-c6922f343028"
         },
         {
             "id": "a6532228-441c-4c24-8af3-94f33a595b0f",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "12ee7e98-5582-493e-bfe5-21996c0659c2",
             "target": "6824c565-ae86-4cf9-ba0a-c6922f343028"
         },
         {
             "id": "a8352cf5-f186-475a-aec5-21a8013289e6",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "e929c189-5dd3-4cb3-8be9-c7a1df556170",
             "target": "5af70b15-c536-435e-ad47-1f4aa592dabe"
         },
         {
             "id": "fe18c50b-876f-422b-b785-9c57d9106235",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "7968c298-1328-4786-b6b2-0a53e38b884f",
             "target": "5af70b15-c536-435e-ad47-1f4aa592dabe"
         },
@@ -2831,25 +2814,25 @@ istar.models.smartHome = {
         },
         {
             "id": "2cc35b61-8fb6-41a6-810b-3fe9e1fbb6c1",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "e1ca06c4-f816-4ba4-9b97-fd9b36a54511",
             "target": "755356b4-962f-4dcf-8e36-1a4d2816c391"
         },
         {
             "id": "22e70d65-a0de-4592-b3a9-6ad4c3dc85ad",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "14d4cc03-526b-4506-aefc-c8cc26b49869",
             "target": "755356b4-962f-4dcf-8e36-1a4d2816c391"
         },
         {
             "id": "cfddc451-7a9e-42e9-bed0-48f911b517a2",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "7a6b97ae-1ad6-4dcc-bff0-173f06ba3db6",
             "target": "ee2ea7fc-93ad-40bc-b11a-b7b87c00e315"
         },
         {
             "id": "2b4d5c44-3fd2-427e-825e-023d7defc876",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "f504dbd8-3abe-4543-bb7d-7fcbc7e42c23",
             "target": "7a6b97ae-1ad6-4dcc-bff0-173f06ba3db6",
             "customProperties": {
@@ -2858,7 +2841,7 @@ istar.models.smartHome = {
         },
         {
             "id": "0ed0346c-7f19-4d47-b5c7-2737c9330fd3",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "733e013c-e3d5-48f9-b1bb-47f3ba22e850",
             "target": "f504dbd8-3abe-4543-bb7d-7fcbc7e42c23",
             "customProperties": {
@@ -2867,67 +2850,67 @@ istar.models.smartHome = {
         },
         {
             "id": "1bcac623-2db0-4218-994d-f9f4c094cac8",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "5d6d705c-5a25-40fb-922e-6db0e1cc78a4",
             "target": "733e013c-e3d5-48f9-b1bb-47f3ba22e850"
         },
         {
             "id": "ac2af33e-2700-4d11-9f4f-cad2f67f4799",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "12e93ae7-6ad0-43ed-ac4d-b24266d95cdc",
             "target": "f504dbd8-3abe-4543-bb7d-7fcbc7e42c23"
         },
         {
             "id": "53647c46-c012-4411-a8e1-a6343eae78b9",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "425f8bb2-519c-4839-8825-85bc3c8645ab",
             "target": "7a6b97ae-1ad6-4dcc-bff0-173f06ba3db6"
         },
         {
             "id": "18156056-2153-4499-bf7e-ed48f800d9c6",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "d5631cc0-865a-4a18-b211-999a9a39037d",
             "target": "7a6b97ae-1ad6-4dcc-bff0-173f06ba3db6"
         },
         {
             "id": "82b075d0-515f-4e16-ba72-fb02a00f3898",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "63c8611d-a4a5-4a2f-a9e2-44d26375cc5f",
             "target": "d5631cc0-865a-4a18-b211-999a9a39037d"
         },
         {
             "id": "d20394b0-2d7b-47ee-979e-bb5fb9551758",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "fbe79b38-b7ab-4980-897d-d84a67f7350a",
             "target": "7a6b97ae-1ad6-4dcc-bff0-173f06ba3db6"
         },
         {
             "id": "ab774dc7-1287-4c92-bd12-ab6cc541a5e2",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "a35d270d-7972-472d-8e26-14a31ba0f74b",
             "target": "fbe79b38-b7ab-4980-897d-d84a67f7350a"
         },
         {
             "id": "62298eb2-dab9-4b19-a7e6-faf8a0465871",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "38bf3ed6-d963-4409-8c0b-53b631332c56",
             "target": "9fece159-1b77-4895-b926-05c4bd762fa2"
         },
         {
             "id": "96619974-e038-4dbc-be22-7a997bd840cc",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "c03e227b-b6e2-4a38-a3a2-aaf458d0262b",
             "target": "38bf3ed6-d963-4409-8c0b-53b631332c56"
         },
         {
             "id": "d9a25f39-8f22-4489-8e80-2c8ce0cf4045",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "62e762e3-6560-4860-89fa-66bc6f5e8ad1",
             "target": "733e013c-e3d5-48f9-b1bb-47f3ba22e850"
         },
         {
             "id": "babeb577-02d8-4eb3-b180-0b7005c4ff1e",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "62e762e3-6560-4860-89fa-66bc6f5e8ad1",
             "target": "38bf3ed6-d963-4409-8c0b-53b631332c56"
         },
@@ -3009,31 +2992,31 @@ istar.models.smartHome = {
         },
         {
             "id": "83084330-5ced-434b-9c3f-d841a40ac07b",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "2ce237c5-9027-4ff4-8744-c28ca73f34f2",
             "target": "39e3358a-79c9-4a82-93c9-bc77d26c6610"
         },
         {
             "id": "325b4920-6676-4909-8b74-1dd4b7760dd6",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "1623c785-fe22-4c96-8988-c9eae3b614f9",
             "target": "39e3358a-79c9-4a82-93c9-bc77d26c6610"
         },
         {
             "id": "7e530449-6f8d-4037-a117-216e673f1476",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "dbb5b65d-49fe-40ef-b241-7d3091f11083",
             "target": "d5631cc0-865a-4a18-b211-999a9a39037d"
         },
         {
             "id": "45c4a355-2054-4c4e-baed-708103b35044",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "81b16c06-1d05-47c3-9412-826ac1915a32",
             "target": "fbe79b38-b7ab-4980-897d-d84a67f7350a"
         },
         {
             "id": "0b0f1125-b252-4ded-80d1-951dff41fa65",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "d04a2c15-d39b-4879-963e-a809cb7f64e2",
             "target": "e8239026-4607-4acc-a4ed-a771d72fbcbc"
         },
@@ -3591,18 +3574,18 @@ istar.models.everyElementAndLink = {
             "customProperties": {
                 "Description": "This actor is-a Actor B.\nIt depends on Agent to achieve Dependum A.\nIt depends on Role to satisfy Dependum B.\nIt depends on Role to execute Dependum C.\nIt depends on Actor B to obtain Dependum D.",
                 "Tooltip": "This actor is collapsed. You can press 'alt' and click on the actor to expand it, making its inner elements visible",
-                "Concept": "Actors are active, autonomous entities that aim at achieving their SoftGoals by exercising their know-how, in collaboration with other actors.\n\nActor can be specialized as Role or Agent. Whenever distinguishing the type of actor is not relevant, either because of the scenario-at-hand or the modeling stage, the notion of generic actor—without specialization—can be used in the model."
+                "Concept": "Actors are active, autonomous entities that aim at achieving their goals by exercising their know-how, in collaboration with other actors.\n\nActor can be specialized as Role or Agent. Whenever distinguishing the type of actor is not relevant, either because of the scenario-at-hand or the modeling stage, the notion of generic actor—without specialization—can be used in the model."
             },
             "nodes": [
                 {
                     "id": "e1acd9b0-c9e9-468b-845c-c7b08db3020f",
-                    "text": "SoftGoal X",
-                    "type": "istar.SoftGoal",
+                    "text": "Goal X",
+                    "type": "istar.Goal",
                     "x": 266,
                     "y": 101,
                     "customProperties": {
-                        "Description": "This is a SoftGoal of Actor A",
-                        "Concept": "A SoftGoal is a state of affairs that the actor wants to achieve and that has clear-cut criteria of achievement"
+                        "Description": "This is a goal of Actor A",
+                        "Concept": "A Goal is a state of affairs that the actor wants to achieve and that has clear-cut criteria of achievement"
                     }
                 },
                 {
@@ -3612,8 +3595,8 @@ istar.models.everyElementAndLink = {
                     "x": 297,
                     "y": 196,
                     "customProperties": {
-                        "Description": "This is a task that, if executed, will also imply the achievement of SoftGoal X",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some SoftGoal"
+                        "Description": "This is a task that, if executed, will also imply the achievement of Goal X",
+                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
@@ -3623,7 +3606,7 @@ istar.models.everyElementAndLink = {
                     "x": 204,
                     "y": 213,
                     "customProperties": {
-                        "Description": "This is a task that, if executed, will imply the achievement of SoftGoal X"
+                        "Description": "This is a task that, if executed, will imply the achievement of Goal X"
                     }
                 }
             ]
@@ -3637,19 +3620,19 @@ istar.models.everyElementAndLink = {
             "customProperties": {
                 "Description": "This is an actor with its boundary expanded",
                 "Tooltip": "In order to expand or collapse (hide) the boundary of an actor you can press 'alt' and click on the actor",
-                "Concept": "Actors are active, autonomous entities that aim at achieving their SoftGoals by exercising their know-how, in collaboration with other actors.\n\nActors’ intentionality is made explicit through the actor boundary, which is a graphical container for their intentional elements together with their interrelationships. The actor boundary is represented by a grey area. An intentional element appearing inside the boundary of an actor denotes something that is desired or wanted by that actor"
+                "Concept": "Actors are active, autonomous entities that aim at achieving their goals by exercising their know-how, in collaboration with other actors.\n\nActors’ intentionality is made explicit through the actor boundary, which is a graphical container for their intentional elements together with their interrelationships. The actor boundary is represented by a grey area. An intentional element appearing inside the boundary of an actor denotes something that is desired or wanted by that actor"
             },
             "nodes": [
                 {
                     "id": "4c3ba102-6514-47a4-b21c-8a8f8cdae0cc",
-                    "text": "SoftGoal A",
-                    "type": "istar.SoftGoal",
+                    "text": "Goal A",
+                    "type": "istar.Goal",
                     "x": 702,
                     "y": 45,
                     "customProperties": {
-                        "Description": "This SoftGoal is OR-refined by Task A, meaning that if Task A gets executed the SoftGoal A will ve achieved",
+                        "Description": "This goal is OR-refined by Task A, meaning that if Task A gets executed the Goal A will ve achieved",
                         "Tooltip": "You can resize an element by dragging the small circle on its bottom-right corner",
-                        "Concept": "A SoftGoal is a state of affairs that the actor wants to achieve and that has clear-cut criteria of achievement"
+                        "Concept": "A Goal is a state of affairs that the actor wants to achieve and that has clear-cut criteria of achievement"
                     }
                 },
                 {
@@ -3659,8 +3642,8 @@ istar.models.everyElementAndLink = {
                     "x": 700,
                     "y": 129,
                     "customProperties": {
-                        "Description": "This task is a means to achieve SoftGoal A. It is AND-refined by tasks B and C",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some SoftGoal"
+                        "Description": "This task is a means to achieve Goal A. It is AND-refined by tasks B and C",
+                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
@@ -3671,7 +3654,7 @@ istar.models.everyElementAndLink = {
                     "y": 209,
                     "customProperties": {
                         "Description": "This task is part of the refinement of Task A",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some SoftGoal"
+                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
@@ -3682,40 +3665,40 @@ istar.models.everyElementAndLink = {
                     "y": 207,
                     "customProperties": {
                         "Description": "This task is part of the refinement of Task A",
-                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some SoftGoal"
+                        "Concept": "Tasks represent actions that an actor wants to be executed, usually with the purpose of achieving some goal"
                     }
                 },
                 {
                     "id": "df52f053-20a2-4bdf-8e23-e8c53a8ce306",
-                    "text": "Operationalization B",
-                    "type": "istar.Operationalization",
+                    "text": "Quality B",
+                    "type": "istar.Quality",
                     "x": 572,
                     "y": 322,
                     "customProperties": {
-                        "Description": "Task B provides sufficient positive evidence (make) for the satisfaction of this Operationalization",
-                        "Concept": "A Operationalization is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a Operationalization its performance; another entity could be the business being analyzed and a Operationalization the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving SoftGoals, and also serve as criteria for evaluating alternative ways of achieving SoftGoals"
+                        "Description": "Task B provides sufficient positive evidence (make) for the satisfaction of this quality",
+                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 },
                 {
                     "id": "3ff6395e-86ec-4661-ba13-c0493331303b",
-                    "text": "Operationalization C",
-                    "type": "istar.Operationalization",
+                    "text": "Quality C",
+                    "type": "istar.Quality",
                     "x": 831,
                     "y": 317,
                     "customProperties": {
-                        "Description": "Task C provides sufficient evidence against the satisfaction (or for the denial) of this Operationalization",
-                        "Concept": "A Operationalization is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a Operationalization its performance; another entity could be the business being analyzed and a Operationalization the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving SoftGoals, and also serve as criteria for evaluating alternative ways of achieving SoftGoals"
+                        "Description": "Task C provides sufficient evidence against the satisfaction (or for the denial) of this quality",
+                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 },
                 {
                     "id": "85940cf3-6d49-4270-9b00-51696b5790f5",
-                    "text": "Operationalization D",
-                    "type": "istar.Operationalization",
+                    "text": "Quality D",
+                    "type": "istar.Quality",
                     "x": 699,
                     "y": 455,
                     "customProperties": {
-                        "Description": "The satisfaction of Operationalization B provides weak evidence against the satisfaction (or for the denial) of this Operationalization.\nOn the other hand, the satisfaction of Operationalization C provides weak positive evidence for the satisfaction of this Operationalization. Quite the pickle, right?",
-                        "Concept": "A Operationalization is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a Operationalization its performance; another entity could be the business being analyzed and a Operationalization the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving SoftGoals, and also serve as criteria for evaluating alternative ways of achieving SoftGoals"
+                        "Description": "The satisfaction of Quality B provides weak evidence against the satisfaction (or for the denial) of this quality.\nOn the other hand, the satisfaction of Quality C provides weak positive evidence for the satisfaction of this quality. Quite the pickle, right?",
+                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 },
                 {
@@ -3731,13 +3714,13 @@ istar.models.everyElementAndLink = {
                 },
                 {
                     "id": "1ecba4f1-f873-466c-8074-092f612d5fed",
-                    "text": "Operationalization A",
-                    "type": "istar.Operationalization",
+                    "text": "Quality A",
+                    "type": "istar.Quality",
                     "x": 861,
                     "y": 101,
                     "customProperties": {
-                        "Description": "This Operationalization qualifies Task A",
-                        "Concept": "A Operationalization is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a Operationalization its performance; another entity could be the business being analyzed and a Operationalization the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving SoftGoals, and also serve as criteria for evaluating alternative ways of achieving SoftGoals"
+                        "Description": "This quality qualifies Task A",
+                        "Concept": "A quality is an attribute for which an actor desires some level of achievement. For example, the entity could be the system under development and a quality its performance; another entity could be the business being analyzed and a quality the yearly profit. The level of achievement may be defined precisely or kept vague. Qualities can guide the search for ways of achieving goals, and also serve as criteria for evaluating alternative ways of achieving goals"
                     }
                 }
             ]
@@ -3747,13 +3730,13 @@ istar.models.everyElementAndLink = {
         {
             "id": "fd083df6-87fc-4423-b25c-3291a1bf9aa3",
             "text": "Dependum A",
-            "type": "istar.SoftGoal",
+            "type": "istar.Goal",
             "x": 13,
             "y": 177,
             "customProperties": {
-                "Description": "This is a dependum in a SoftGoal dependency.\n\n– Depender: Actor A\n– dependerElmt: none\n– dependum: Dependum A\n– dependee: Agent A\n– dependeeElmt: none",
+                "Description": "This is a dependum in a goal dependency.\n\n– Depender: Actor A\n– dependerElmt: none\n– dependum: Dependum A\n– dependee: Agent A\n– dependeeElmt: none",
                 "Tooltip": "You can flip the direction of a dependency by clicking on the button below",
-                "Concept": "Dependencies represent social relationships. A SoftGoal dependency indicates that the dependee is expected to achieve the SoftGoal, and is free to choose how.\n\nDependency relationships should not share the same dependum, as each dependum is a conceptually different element; in some cases, a dependum in one dependency is achieved, but is not achieved in another dependency, even if the dependums may have the same name.\nIn other words, an actor cannot depend on more than one actor for the same dependum, or two actors cannot depend on the same dependum from an actor. Instead, create multiple dependums with the same name"
+                "Concept": "Dependencies represent social relationships. A goal dependency indicates that the dependee is expected to achieve the goal, and is free to choose how.\n\nDependency relationships should not share the same dependum, as each dependum is a conceptually different element; in some cases, a dependum in one dependency is achieved, but is not achieved in another dependency, even if the dependums may have the same name.\nIn other words, an actor cannot depend on more than one actor for the same dependum, or two actors cannot depend on the same dependum from an actor. Instead, create multiple dependums with the same name"
             },
             "source": "9cab7456-727b-4d7e-81dd-af8903718cb3",
             "target": "2b3ba506-1f5b-4b5b-9114-01b1092cd067"
@@ -3779,7 +3762,7 @@ istar.models.everyElementAndLink = {
             "y": 169,
             "customProperties": {
                 "Description": "This is a dependum in a resource dependency.\n\n– Depender: Actor A\n– dependerElmt: Task X (inside Actor A)\n– dependum: Dependum D\n– dependee: Actor B\n– dependeeElmt: Task B (inside Actor B)",
-                "Tooltip": "You can change the type of a dependency (SoftGoal, Operationalization, task or resource) by clicking on the type in this table",
+                "Tooltip": "You can change the type of a dependency (goal, quality, task or resource) by clicking on the type in this table",
                 "Concept": "Dependencies represent social relationships. A resource dependency indicates that the dependee is expected to make the resource available to the depender"
             },
             "source": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
@@ -3788,12 +3771,12 @@ istar.models.everyElementAndLink = {
         {
             "id": "ad1e6006-2afa-448a-ab76-94be798d1a1e",
             "text": "Dependum A",
-            "type": "istar.SoftGoal",
+            "type": "istar.Goal",
             "x": 95,
             "y": 467,
             "customProperties": {
-                "Description": "This is a dependum in a SoftGoal dependency.\n\n– Depender: Role A\n– dependerElmt: none\n– dependum: Dependum A\n– dependee: Agent A\n– dependeeElmt: none",
-                "Concept": "Dependencies represent social relationships. A SoftGoal dependency indicates that the dependee is expected to achieve the SoftGoal, and is free to choose how.\n\nDependency relationships should not share the same dependum, as each dependum is a conceptually different element; in some cases, a dependum in one dependency is achieved, but is not achieved in another dependency, even if the dependums may have the same name.\nIn other words, an actor cannot depend on more than one actor for the same dependum, or two actors cannot depend on the same dependum from an actor. Instead, create multiple dependums with the same name"
+                "Description": "This is a dependum in a goal dependency.\n\n– Depender: Role A\n– dependerElmt: none\n– dependum: Dependum A\n– dependee: Agent A\n– dependeeElmt: none",
+                "Concept": "Dependencies represent social relationships. A goal dependency indicates that the dependee is expected to achieve the goal, and is free to choose how.\n\nDependency relationships should not share the same dependum, as each dependum is a conceptually different element; in some cases, a dependum in one dependency is achieved, but is not achieved in another dependency, even if the dependums may have the same name.\nIn other words, an actor cannot depend on more than one actor for the same dependum, or two actors cannot depend on the same dependum from an actor. Instead, create multiple dependums with the same name"
             },
             "source": "ccf83503-3c8f-4886-a30f-8a290499d8b2",
             "target": "2b3ba506-1f5b-4b5b-9114-01b1092cd067"
@@ -3801,12 +3784,12 @@ istar.models.everyElementAndLink = {
         {
             "id": "49ba9425-0de8-4fbf-8ec0-6a384e844ea4",
             "text": "Dependum B",
-            "type": "istar.Operationalization",
+            "type": "istar.Quality",
             "x": 193,
             "y": 314,
             "customProperties": {
-                "Description": "This is a dependum in a Operationalization dependency.\n\n– Depender: Actor A\n– dependerElmt: SoftGoal X (inside Actor A)\n– dependum: Dependum B\n– dependee: Role A\n– dependeeElmt: none",
-                "Concept": "Dependencies represent social relationships. A Operationalization dependency indicates that  the dependee is expected to sufficiently satisfy the Operationalization, and is free to choose how"
+                "Description": "This is a dependum in a quality dependency.\n\n– Depender: Actor A\n– dependerElmt: Goal X (inside Actor A)\n– dependum: Dependum B\n– dependee: Role A\n– dependeeElmt: none",
+                "Concept": "Dependencies represent social relationships. A quality dependency indicates that  the dependee is expected to sufficiently satisfy the quality, and is free to choose how"
             },
             "source": "a892b326-dae3-4ce1-8513-0de9ac88d4b5",
             "target": "ccf83503-3c8f-4886-a30f-8a290499d8b2"
@@ -3820,7 +3803,7 @@ istar.models.everyElementAndLink = {
             "target": "fd083df6-87fc-4423-b25c-3291a1bf9aa3",
             "customProperties": {
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown",
-                "Description": "This link is part of a SoftGoal dependency. The \"D\" is pointing from Actor A to Dependum A"
+                "Description": "This link is part of a goal dependency. The \"D\" is pointing from Actor A to Dependum A"
             }
         },
         {
@@ -3829,7 +3812,7 @@ istar.models.everyElementAndLink = {
             "source": "fd083df6-87fc-4423-b25c-3291a1bf9aa3",
             "target": "2b3ba506-1f5b-4b5b-9114-01b1092cd067",
             "customProperties": {
-                "Description": "This link is part of a SoftGoal dependency. The \"D\" is pointing from Dependum A to Agent A",
+                "Description": "This link is part of a goal dependency. The \"D\" is pointing from Dependum A to Agent A",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
@@ -3881,7 +3864,7 @@ istar.models.everyElementAndLink = {
             "source": "ccf83503-3c8f-4886-a30f-8a290499d8b2",
             "target": "ad1e6006-2afa-448a-ab76-94be798d1a1e",
             "customProperties": {
-                "Description": "This link is part of a SoftGoal dependency. The \"D\" is pointing from Role A to Dependum A",
+                "Description": "This link is part of a goal dependency. The \"D\" is pointing from Role A to Dependum A",
                 "Tooltip": "If you accidentally added to many vertices to an link, you can delete them by clickin on the \"Clear vertices\" button below"
             }
         },
@@ -3891,7 +3874,7 @@ istar.models.everyElementAndLink = {
             "source": "ad1e6006-2afa-448a-ab76-94be798d1a1e",
             "target": "2b3ba506-1f5b-4b5b-9114-01b1092cd067",
             "customProperties": {
-                "Description": "This link is part of a SoftGoal dependency. The \"D\" is pointing from Dependum A to Agent A",
+                "Description": "This link is part of a goal dependency. The \"D\" is pointing from Dependum A to Agent A",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
@@ -3901,7 +3884,7 @@ istar.models.everyElementAndLink = {
             "source": "a892b326-dae3-4ce1-8513-0de9ac88d4b5",
             "target": "49ba9425-0de8-4fbf-8ec0-6a384e844ea4",
             "customProperties": {
-                "Description": "This link is part of a Operationalization dependency. The \"D\" is pointing from Actor A to Dependum B",
+                "Description": "This link is part of a quality dependency. The \"D\" is pointing from Actor A to Dependum B",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
@@ -3911,17 +3894,17 @@ istar.models.everyElementAndLink = {
             "source": "49ba9425-0de8-4fbf-8ec0-6a384e844ea4",
             "target": "ccf83503-3c8f-4886-a30f-8a290499d8b2",
             "customProperties": {
-                "Description": "This link is part of a Operationalization dependency. The \"D\" is pointing from Dependum B to Role A",
+                "Description": "This link is part of a quality dependency. The \"D\" is pointing from Dependum B to Role A",
                 "Concept": "A dependency is defined as a relationship with five arguments:\n– depender is the actor that depends for something (the dependum) to be provided;\n– dependerElmt is the intentional element within the depender’s actor boundary where the dependency starts from, which explains why the dependency exists;\n– dependum is an intentional element that is the object of the dependency;\n– dependee is the actor that should provide the dependum;\n– dependeeElmt is the intentional element that explains how the dependee intends to provide the dependum\n\nDependencies link the dependerElmt within the depender actor to the dependum, outside actor boundaries, to the dependeeElmt within the dependee actor. The link is drawn with a “D” symbol indicating direction, with the D acting as an arrowhead “>”, pointing from dependerElmt to dependum to dependeeElmt.\n\nBoth the dependerElmt and the dependeeElmt can be omitted. This optionality is used when creating an initial Strategic Dependency view, or to support expressing partial knowledge, e.g., when the “why” (dependerElmt) or the “how”; (dependeeElmt) of the dependency are unknown"
             }
         },
         {
             "id": "fa92f725-2109-4c53-b8e3-d82da60fc44e",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "b64fbf2b-b55e-4510-b31f-9adef8de5b69",
             "target": "e1acd9b0-c9e9-468b-845c-c7b08db3020f",
             "customProperties": {
-                "Description": "This is an (inclusive) OR-refinement linking Task X to SoftGoal X",
+                "Description": "This is an (inclusive) OR-refinement linking Task X to Goal X",
                 "Concept": "The black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled"
             }
         },
@@ -3938,30 +3921,30 @@ istar.models.everyElementAndLink = {
         },
         {
             "id": "8a160047-6059-4688-ad66-1dd02d130fc5",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "target": "4c3ba102-6514-47a4-b21c-8a8f8cdae0cc",
             "customProperties": {
-                "Concept": "iStar 2.0 features a generic relationship called \"refinement\" that links SoftGoals and tasks hierarchically. Refinement is an n-ary relationship relating one parent to one or more children.\nA parent can only be AND-refined or OR-refined, not both simultaneously\n\nThe black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled. This relationship allows for a single child (as is the case here).\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a SoftGoal (which is the case here): in the case of OR-refinement, a child task is a particular way (a “means”) for fulfilling the parent SoftGoal (the “end”), while a child SoftGoal is a sub-SoftGoal that can be achieved for fulfilling the parent SoftGoal;\n• If the parent is a task: in the case of OR-refinement, a child SoftGoal is a SoftGoal whose existence that is uncovered by analyzing the parent task which may substitute for the original task, while a child task is a way to execute the parent task.",
-                "Description": "This is an OR-refinement linking Task A with SoftGoal A"
+                "Concept": "iStar 2.0 features a generic relationship called \"refinement\" that links goals and tasks hierarchically. Refinement is an n-ary relationship relating one parent to one or more children.\nA parent can only be AND-refined or OR-refined, not both simultaneously\n\nThe black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled. This relationship allows for a single child (as is the case here).\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal (which is the case here): in the case of OR-refinement, a child task is a particular way (a “means”) for fulfilling the parent goal (the “end”), while a child goal is a sub-goal that can be achieved for fulfilling the parent goal;\n• If the parent is a task: in the case of OR-refinement, a child goal is a goal whose existence that is uncovered by analyzing the parent task which may substitute for the original task, while a child task is a way to execute the parent task.",
+                "Description": "This is an OR-refinement linking Task A with Goal A"
             }
         },
         {
             "id": "cb88aba6-9fdf-4f90-9eaa-0b74be5d0edd",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "60d0943c-169e-41ff-85ed-e19360456863",
             "target": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "customProperties": {
-                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a SoftGoal: in the case of AND-refinement, a child SoftGoal is a sub-state of affairs that is part of the parent SoftGoal, while a child task is a sub-task that must be fulfilled;\n• If the parent is a task (which is the case here): in the case of AND-refinement, a child task is a sub-task that is identified as part of the parent task, while a child SoftGoal is a SoftGoal that is uncovered by analyzing the parent task"
+                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal: in the case of AND-refinement, a child goal is a sub-state of affairs that is part of the parent goal, while a child task is a sub-task that must be fulfilled;\n• If the parent is a task (which is the case here): in the case of AND-refinement, a child task is a sub-task that is identified as part of the parent task, while a child goal is a goal that is uncovered by analyzing the parent task"
             }
         },
         {
             "id": "af1ac65b-8480-4c90-a960-e6e9ce239409",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "0a28f23e-2008-43b3-9e63-025bdfd5f30c",
             "target": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "customProperties": {
-                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a SoftGoal: in the case of AND-refinement, a child SoftGoal is a sub-state of affairs that is part of the parent SoftGoal, while a child task is a sub-task that must be fulfilled;\n• If the parent is a task (which is the case here): in the case of AND-refinement, a child task is a sub-task that is identified as part of the parent task, while a child SoftGoal is a SoftGoal that is uncovered by analyzing the parent task"
+                "Concept": "The small line in the top of this link indicates that it is an AND-refinement: the fulfillment of all the n children (n ≥ 2) makes the parent fulfilled.\n\nDepending on the connected elements, refinement takes different meanings:\n• If the parent is a goal: in the case of AND-refinement, a child goal is a sub-state of affairs that is part of the parent goal, while a child task is a sub-task that must be fulfilled;\n• If the parent is a task (which is the case here): in the case of AND-refinement, a child task is a sub-task that is identified as part of the parent task, while a child goal is a goal that is uncovered by analyzing the parent task"
             }
         },
         {
@@ -3970,13 +3953,13 @@ istar.models.everyElementAndLink = {
             "source": "1ecba4f1-f873-466c-8074-092f612d5fed",
             "target": "e1270a5e-3c20-4be9-8097-66f6ed8502cd",
             "customProperties": {
-                "Concept": "The qualification relationship relates a Operationalization to its subject: a task, SoftGoal, or resource. Placing a qualification relationship expresses a desired Operationalization over the execution of a task, the achievement of the SoftGoal, or the provision of the resource. For example, a Operationalization “Quick saving” may refer to the SoftGoal “Save model”, qualifying how the operation or function of this SoftGoal should be achieved",
+                "Concept": "The qualification relationship relates a quality to its subject: a task, goal, or resource. Placing a qualification relationship expresses a desired quality over the execution of a task, the achievement of the goal, or the provision of the resource. For example, a quality “Quick saving” may refer to the goal “Save model”, qualifying how the operation or function of this goal should be achieved",
                 "Tooltip": "You can add vertices to a link by clicking right on top of its line"
             }
         },
         {
             "id": "8621b90b-d6cc-4edf-b7d8-9747292bd4f3",
-            "type": "istar.DecompositionLink3",
+            "type": "istar.NeededByLink",
             "source": "54c01821-aa4d-4bd0-9fdf-6ddaa25c299f",
             "target": "0a28f23e-2008-43b3-9e63-025bdfd5f30c",
             "customProperties": {
@@ -3989,7 +3972,7 @@ istar.models.everyElementAndLink = {
             "source": "60d0943c-169e-41ff-85ed-e19360456863",
             "target": "df52f053-20a2-4bdf-8e23-e8c53a8ce306",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative SoftGoals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'make' contribution: The source provides sufficient positive evidence for the satisfaction of the target. In some i* variations this is called a ++ contribution",
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'make' contribution: The source provides sufficient positive evidence for the satisfaction of the target. In some i* variations this is called a ++ contribution",
                 "Tooltip": "You can change the value of a contribution (make, help, hurt or break) by clicking on the value in this table"
             },
             "label": "make"
@@ -4000,7 +3983,7 @@ istar.models.everyElementAndLink = {
             "source": "0a28f23e-2008-43b3-9e63-025bdfd5f30c",
             "target": "3ff6395e-86ec-4661-ba13-c0493331303b",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative SoftGoals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'break' contribution: The source provides sufficient evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a -- contribution"
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'break' contribution: The source provides sufficient evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a -- contribution"
             },
             "label": "break"
         },
@@ -4010,7 +3993,7 @@ istar.models.everyElementAndLink = {
             "source": "df52f053-20a2-4bdf-8e23-e8c53a8ce306",
             "target": "85940cf3-6d49-4270-9b00-51696b5790f5",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative SoftGoals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'hurt' contribution: The source provides weak evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a - contribution"
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'hurt' contribution: The source provides weak evidence against the satisfaction (or for the denial) of the target.  In some i* variations this is called a - contribution"
             },
             "label": "hurt"
         },
@@ -4020,7 +4003,7 @@ istar.models.everyElementAndLink = {
             "source": "3ff6395e-86ec-4661-ba13-c0493331303b",
             "target": "85940cf3-6d49-4270-9b00-51696b5790f5",
             "customProperties": {
-                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative SoftGoals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'help' contribution:  The source provides weak positive evidence for the satisfaction of the target.  In some i* variations this is called a + contribution"
+                "Concept": "Contribution links represent the effects of intentional elements on qualities, and are essential to assist analysts in the decision-making process among alternative goals or tasks. Contribution links lead to the accumulation of evidence for qualities. We talk of qualities being fulfilled or satisfied, having sufficient positive evidence, or being denied, having strong negative evidence.\n\nThis here is a 'help' contribution:  The source provides weak positive evidence for the satisfaction of the target.  In some i* variations this is called a + contribution"
             },
             "label": "help"
         },
@@ -4036,11 +4019,11 @@ istar.models.everyElementAndLink = {
         },
         {
             "id": "710b0263-0263-4b39-bd9f-26214616ba84",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "a892b326-dae3-4ce1-8513-0de9ac88d4b5",
             "target": "e1acd9b0-c9e9-468b-845c-c7b08db3020f",
             "customProperties": {
-                "Description": "This is an (inclusive) OR-refinement linking Task X to SoftGoal X",
+                "Description": "This is an (inclusive) OR-refinement linking Task X to Goal X",
                 "Concept": "The black triangle in this link indicates that it is an (inclusive) OR-refinement: the fulfillment of at least one child makes the parent fulfilled"
             }
         }
@@ -4208,7 +4191,7 @@ istar.models.everyElementAndLink = {
         "height": 600,
         "name": "Every iStar 2.0 element and link",
         "customProperties": {
-            "Description": "This is an example showing every iStar 2.0 element and link.\n\nKinds of actor:\n - Actor, Agent and Role\n\nDependency links:\n - SoftGoal, Operationalization, Task and Resource dependency\n\nActor links:\n - Is-A and Participates-In\n\nInner elements:\n - SoftGoal, Operationalization, Task, Resource\n\nInner element links:\n - And-refinement, Or-refinement, Needed-By, Qualification, and Contribution links (make, help, hurt, break)",
+            "Description": "This is an example showing every iStar 2.0 element and link.\n\nKinds of actor:\n - Actor, Agent and Role\n\nDependency links:\n - Goal, Quality, Task and Resource dependency\n\nActor links:\n - Is-A and Participates-In\n\nInner elements:\n - Goal, Quality, Task, Resource\n\nInner element links:\n - And-refinement, Or-refinement, Needed-By, Qualification, and Contribution links (make, help, hurt, break)",
             "Tooltip": "Click on \"Toggle fullscreen\" in the Options menu to facilitate the use of the tool\n\nAlso, click on the elements and links of this model to learn more about the iStar 2.0 language",
             "Origin": "Model created by João Pimentel (UFRPE/Brazil). Concepts copied (with adaptations) from the iStar 2.0 language guide, by Fabiano Dalpiaz , Xavier Franch, and Jennifer Horkoff. You can access the full guide through the Help menu"
         }
@@ -4227,25 +4210,25 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "41f6245a-fe65-4b02-9348-1d2a5aa49b61",
                     "text": "Low Price",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 31,
                     "y": 193
                 },
                 {
                     "id": "fd9cb71e-7beb-43b4-8bb3-407b94432adb",
                     "text": "Flexibility [Purchasing]",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 88,
                     "y": 94
                 },
                 {
                     "id": "cbb50b38-f83c-4871-b545-3bd72f9aac29",
                     "text": "Service Be Purchased [Service]",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 203,
                     "y": 66,
                     "customProperties": {
-                        "Description": "The customer’s main SoftGoal is that Service Be Purchased [Service]. The SoftGoal is parameterized on Service so that the graph may be evaluated differently for different services."
+                        "Description": "The customer’s main goal is that Service Be Purchased [Service]. The goal is parameterized on Service so that the graph may be evaluated differently for different services."
                     }
                 },
                 {
@@ -4255,7 +4238,7 @@ istar.models.buyerDrivenECommerce = {
                     "x": 199,
                     "y": 159,
                     "customProperties": {
-                        "Description": "One possible way to accomplish the Service Be Purchased SoftGoal is through the task Purchase By Naming My Own Price [Service]. It is connected to the SoftGoal with an or-refinement link. This task has two sub-elements connected to it through and-refinement links – the sub-task Name A Price [Service], and the sub-SoftGoal Low Price Service Provider Be Found.\n\nNaming one’s own price contributes positively (Help) to the buyer’s desired Operationalization of Low Price, but negatively (Hurt) to Flexibility [Purchasing] because preferences about schedule, choice of airline, etc., could not be accommodated"
+                        "Description": "One possible way to accomplish the Service Be Purchased goal is through the task Purchase By Naming My Own Price [Service]. It is connected to the goal with an or-refinement link. This task has two sub-elements connected to it through and-refinement links – the sub-task Name A Price [Service], and the sub-goal Low Price Service Provider Be Found.\n\nNaming one’s own price contributes positively (Help) to the buyer’s desired quality of Low Price, but negatively (Hurt) to Flexibility [Purchasing] because preferences about schedule, choice of airline, etc., could not be accommodated"
                     }
                 },
                 {
@@ -4268,14 +4251,14 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "ced7a959-842e-40db-8214-90bebb537259",
                     "text": "Low Price Service Provider Be Found",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 251,
                     "y": 297
                 },
                 {
                     "id": "e9d26ca1-da40-4f0a-a10b-f4e5ddaedcb8",
-                    "text": "Good Operationalization [Service]",
-                    "type": "istar.Operationalization",
+                    "text": "Good Quality [Service]",
+                    "type": "istar.Quality",
                     "x": 372,
                     "y": 267,
                     "customProperties": {
@@ -4294,21 +4277,21 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "66b6daf0-c676-46c2-8552-dabd042c4163",
                     "text": "Profitability",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 784,
                     "y": 48
                 },
                 {
                     "id": "b389b51d-d8ef-4b7a-9b7c-e48b9fdb528c",
                     "text": "Customer Attraction [Service]",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 801,
                     "y": 182
                 },
                 {
                     "id": "5536a6e3-7a22-4f93-afca-d944ad76e682",
                     "text": "Be Middleman [Service]",
-                    "type": "istar.SoftGoal",
+                    "type": "istar.Goal",
                     "x": 1034,
                     "y": 50
                 },
@@ -4343,7 +4326,7 @@ istar.models.buyerDrivenECommerce = {
                 {
                     "id": "53516afe-4276-487c-b2f5-62298257e377",
                     "text": "Loyalty",
-                    "type": "istar.Operationalization",
+                    "type": "istar.Quality",
                     "x": 639,
                     "y": 199,
                     "customProperties": {
@@ -4387,11 +4370,11 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "07e4ea3e-bd43-49e3-b41c-38320942dcfb",
             "text": "Low Price Service Provider Be Found",
-            "type": "istar.SoftGoal",
+            "type": "istar.Goal",
             "x": 477,
             "y": 404,
             "customProperties": {
-                "Description": "In a SoftGoal dependency, an actor depends on another to make a condition in the world come true. The SoftGoal dependency Low Price Service Provider be Found from the customer to the middleman means that it is up to the middleman to decide how to find the low price service provider"
+                "Description": "In a goal dependency, an actor depends on another to make a condition in the world come true. The goal dependency Low Price Service Provider be Found from the customer to the middleman means that it is up to the middleman to decide how to find the low price service provider"
             },
             "source": "ced7a959-842e-40db-8214-90bebb537259",
             "target": "eaf58ea7-2db6-4ab1-9ed4-6b457ac0661a"
@@ -4399,7 +4382,7 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "a77ec4dd-ab7d-463c-82fd-928cf3dde4c6",
             "text": "Acceptable Price [Service]",
-            "type": "istar.Operationalization",
+            "type": "istar.Quality",
             "x": 172,
             "y": 536,
             "source": "f9b4f95d-861a-4f71-b3d7-1e75c6dda381",
@@ -4408,7 +4391,7 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "4cff68b2-92bf-4e1c-b802-44daaadfdadd",
             "text": "Attract More Customers [Service]",
-            "type": "istar.Operationalization",
+            "type": "istar.Quality",
             "x": 643,
             "y": 468,
             "source": "f9b4f95d-861a-4f71-b3d7-1e75c6dda381",
@@ -4428,12 +4411,12 @@ istar.models.buyerDrivenECommerce = {
         },
         {
             "id": "7c51a553-16a7-4e5d-883d-0aa0ee9ae4cf",
-            "text": "Good Operationalization [Service]",
-            "type": "istar.Operationalization",
+            "text": "Good Quality [Service]",
+            "type": "istar.Quality",
             "x": 307,
             "y": 476,
             "customProperties": {
-                "Description": "The customer’s dependency on the supplier for good Operationalization service can be achieved in different ways. The desired degree of how good the Operationalization should be is ultimately decided by the depender"
+                "Description": "The customer’s dependency on the supplier for good quality service can be achieved in different ways. The desired degree of how good the quality should be is ultimately decided by the depender"
             },
             "source": "e9d26ca1-da40-4f0a-a10b-f4e5ddaedcb8",
             "target": "f9b4f95d-861a-4f71-b3d7-1e75c6dda381"
@@ -4441,7 +4424,7 @@ istar.models.buyerDrivenECommerce = {
         {
             "id": "62b11734-5a57-4b75-843c-6e1aa99bc8a5",
             "text": "Loyalty",
-            "type": "istar.Operationalization",
+            "type": "istar.Quality",
             "x": 495,
             "y": 147,
             "customProperties": {
@@ -4526,37 +4509,37 @@ istar.models.buyerDrivenECommerce = {
         },
         {
             "id": "195ffcdc-8884-4321-932a-00e5dec79f73",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "c9731a43-8765-450f-aec1-5450d733a923",
             "target": "cbb50b38-f83c-4871-b545-3bd72f9aac29"
         },
         {
             "id": "87f9cad7-b9cc-49fe-ab58-896acbf19d2a",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "ed027de5-ce0c-4544-bd6f-13da198dff2a",
             "target": "c9731a43-8765-450f-aec1-5450d733a923"
         },
         {
             "id": "416f468d-2df4-4778-b9c1-fe8834287722",
-            "type": "istar.DecompositionLink2",
+            "type": "istar.OrRefinementLink",
             "source": "be1aa6fc-66dd-40f8-af03-a652352793e1",
             "target": "5536a6e3-7a22-4f93-afca-d944ad76e682"
         },
         {
             "id": "20119a89-b236-4164-96d2-f98c76a67261",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "afbabeb8-bf7c-432f-bc12-3cf1d2142ba4",
             "target": "be1aa6fc-66dd-40f8-af03-a652352793e1"
         },
         {
             "id": "f18a4b6e-11a1-409a-8ad8-893cd2230891",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "ef62e89b-1bdd-49ed-959c-be64f45d673a",
             "target": "be1aa6fc-66dd-40f8-af03-a652352793e1"
         },
         {
             "id": "cc31d1cb-8436-43cb-a9f7-752752173dbc",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "eaf58ea7-2db6-4ab1-9ed4-6b457ac0661a",
             "target": "be1aa6fc-66dd-40f8-af03-a652352793e1"
         },
@@ -4569,7 +4552,7 @@ istar.models.buyerDrivenECommerce = {
         },
         {
             "id": "5ad03ad3-8757-49a5-9dfc-cd3e63ad526e",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "ced7a959-842e-40db-8214-90bebb537259",
             "target": "c9731a43-8765-450f-aec1-5450d733a923"
         },
@@ -4659,7 +4642,7 @@ istar.models.buyerDrivenECommerce = {
         },
         {
             "id": "73f4c938-3650-4262-9f62-a45c3b35577c",
-            "type": "istar.DecompositionLink1",
+            "type": "istar.AndRefinementLink",
             "source": "05a6b113-d29d-4190-b33e-bf5d7870ba99",
             "target": "be1aa6fc-66dd-40f8-af03-a652352793e1"
         }
@@ -4905,7 +4888,7 @@ istar.models.buyerDrivenECommerce = {
         "customProperties": {
             "Description": "Example of a buyer-driven e-commerce system. In such a system, the customer depends on a middleman to find a service provider who is willing to accept a price set by the customer. The customer submits a priced request to a middleman. The middleman forwards the request to suppliers. If a supplier decides to accept the request, it makes an agreement with the middleman. The middleman expects the customer to pay for the purchase in time.",
             "Colors": "Checkout the yellow elements, they have textual descriptions",
-            "About": "When you collapse every actor, the model becomes a *Strategic Dependency* (SD) model, consisting of a set of nodes and links. Each node represents an actor, and each link between two actors indicates that one actor depends on the other for something in order that the former may attain some SoftGoal. We call the depending actor the depender, and the actor who is depended upon the dependee. The object around which the\ndependency relationship centers is called the dependum. By depending on another actor for a dependum, an actor (the depender) is able to achieve SoftGoals that it was not able to without the dependency, or not as easily or as well. At the same time, the depender becomes vulnerable. If the dependee fails to deliver the dependum, the depender would be adversely affected in its ability to achieve its SoftGoals.\n\nWhen actors are expanded, you have a *Strategic Rationale* (SR) model, which provides a more detailed level of modelling by looking “inside” actors to model internal intentional relationships. Intentional elements (SoftGoals, tasks, resources, and qualities) appear in SR models not only as external dependencies, but also as internal elements arranged into (mostly hierarchical) structures of or-refinements, and-refinements, contribution, needed-by and qualification relationships.",
+            "About": "When you collapse every actor, the model becomes a *Strategic Dependency* (SD) model, consisting of a set of nodes and links. Each node represents an actor, and each link between two actors indicates that one actor depends on the other for something in order that the former may attain some goal. We call the depending actor the depender, and the actor who is depended upon the dependee. The object around which the\ndependency relationship centers is called the dependum. By depending on another actor for a dependum, an actor (the depender) is able to achieve goals that it was not able to without the dependency, or not as easily or as well. At the same time, the depender becomes vulnerable. If the dependee fails to deliver the dependum, the depender would be adversely affected in its ability to achieve its goals.\n\nWhen actors are expanded, you have a *Strategic Rationale* (SR) model, which provides a more detailed level of modelling by looking “inside” actors to model internal intentional relationships. Intentional elements (goals, tasks, resources, and qualities) appear in SR models not only as external dependencies, but also as internal elements arranged into (mostly hierarchical) structures of or-refinements, and-refinements, contribution, needed-by and qualification relationships.",
             "Origin": "Model and text based on Eric Yu, Lin Liu, and Ying Li. \"Modelling strategic actor relationships to support intellectual property management.\" International Conference on Conceptual Modeling, 2001. It was adapted to conform to the iStar 2.0 standard, thus it is not an exact copy of the original model."
         }
     }
